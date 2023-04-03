@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "name": "Flutter (Redmi Note 9 Pro Max)",
+            "program": "lib/main.dart",
+            "deviceId": "6e867af3",
+            "request": "launch",
+            "type": "dart"
+        }
+    ]
+}

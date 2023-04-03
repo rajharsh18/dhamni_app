@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "530128623193",
+    "project_id": "dhamni-818db",
+    "storage_bucket": "dhamni-818db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:530128623193:android:6a3b22545207086aea0348",
+        "android_client_info": {
+          "package_name": "com.rajharsh.dhamni"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "530128623193-bj1q7be3ep4gr1qr4mkds3eecq81g2qm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rajharsh.dhamni",
+            "certificate_hash": "3dc0909a5c4bb010d9fad50547e51e1afc9a0b5d"
+          }
+        },
+        {
+          "client_id": "530128623193-fn764atmcu39a9g9d80fs9e4c623g2fe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACA1nK9zw3oJe8OTXUwEiTywfidBHb5xI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "530128623193-fn764atmcu39a9g9d80fs9e4c623g2fe.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "530128623193-7oe2119itihaqhdtmd0n1n7gtodm9oh6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.dhamni"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

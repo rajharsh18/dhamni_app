@@ -1,0 +1,49 @@
+name: dhamni
+description: A new Flutter project.
+publish_to: 'none'
+
+
+environment:
+  sdk: '>=2.19.2 <3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  google_fonts: ^4.0.3
+  flutter_native_splash: ^2.2.19
+  get: ^4.6.5
+  flutter_otp_text_field: ^1.1.1
+  firebase_core: ^2.8.0
+  firebase_auth: ^4.3.0
+  line_awesome_flutter: ^2.0.0
+  cloud_firestore: ^4.5.0
+  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter_native_splash:
+  color: "#f7f6f1"
+  color_dark: "#272727"
+  image: assets/logo/dhamni_logo.png
+  image_dark: assets/logo/dhamni_logo.png
+
+  android_12:
+    icon_background_color: "#f7f6f1"
+    icon_background_color_dark: "#272727"
+    image: assets/logo/dhamni_logo.png
+    image_dark: assets/logo/dhamni_logo.png
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/logo/
+    - assets/images/splash_images/
+    - assets/images/dashboard/
+    - assets/images/welcome_images/
+    - assets/images/on_boarding_images/
