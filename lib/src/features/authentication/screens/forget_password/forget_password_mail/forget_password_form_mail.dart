@@ -1,14 +1,18 @@
 import 'package:dhamni/src/constants/sizes.dart';
 import 'package:dhamni/src/constants/text_strings.dart';
-import 'package:dhamni/src/features/authentication/screens/forget_password/forget_password_otp/otp_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ForgetPasswordMailForm extends StatelessWidget {
-  const ForgetPasswordMailForm({
-    super.key,
-  });
+class ForgetPasswordMailForm extends StatefulWidget {
+  const ForgetPasswordMailForm({Key? key}) : super(key: key);
 
+  @override
+  _ForgetPasswordMailFormState createState() => _ForgetPasswordMailFormState();
+}
+
+class _ForgetPasswordMailFormState extends State<ForgetPasswordMailForm> {
+  TextEditingController _emailTextController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -18,22 +22,33 @@ class ForgetPasswordMailForm extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextFormField(
+              controller: _emailTextController,
               decoration: InputDecoration(
                   prefixIcon: Icon(Icons.person_outline_outlined),
                   labelText: tEmail,
                   hintText: tEmail,
                   border: OutlineInputBorder()),
             ),
-            SizedBox(
+            const SizedBox(
               height: tFormHeight - 20,
             ),
             SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
                     onPressed: () {
-                      Get.to(() => const OTPScreen());
+                      FirebaseAuth.instance
+                          .sendPasswordResetEmail(
+                              email: _emailTextController.text)
+                          .then((value) => Navigator.of(context).pop())
+                          .whenComplete(
+                            () => Get.snackbar("Success",
+                                "Mail has been sent to reset your password",
+                                snackPosition: SnackPosition.BOTTOM,
+                                backgroundColor: Colors.green.withOpacity(0.1),
+                                colorText: Colors.green),
+                          );
                     },
-                    child: Text(tNext.toUpperCase())))
+                    child: Text(tNext.toUpperCase()))),
           ],
         ),
       ),

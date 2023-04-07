@@ -41,8 +41,11 @@ class SignUpForm extends StatelessWidget {
             const SizedBox(height: tFormHeight - 20),
             TextFormField(
               controller: controller.password,
+              obscureText: true,
               decoration: const InputDecoration(
-                  label: Text(tPassword), prefixIcon: Icon(Icons.fingerprint)),
+                label: Text(tPassword),
+                prefixIcon: Icon(Icons.fingerprint),
+              ),
             ),
             const SizedBox(height: tFormHeight - 10),
             SizedBox(
