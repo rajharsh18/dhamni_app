@@ -2,6 +2,7 @@ import 'package:dhamni/src/constants/colors.dart';
 import 'package:dhamni/src/constants/image_strings.dart';
 import 'package:dhamni/src/constants/sizes.dart';
 import 'package:dhamni/src/constants/text_strings.dart';
+import 'package:dhamni/src/features/core/screens/profile/all_users.dart';
 import 'package:dhamni/src/features/core/screens/profile/update_profile_screen.dart';
 import 'package:dhamni/src/features/core/screens/profile/widgets/profile_menu.dart';
 import 'package:dhamni/src/repository/authentication_repository/authentication_repository.dart';
@@ -112,7 +113,7 @@ class ProfileScreen extends StatelessWidget {
               ProfileMenuWidget(
                 title: "User Management",
                 icon: LineAwesomeIcons.user_check,
-                onPress: () {},
+                onPress: () => Get.to(() => AllUsers()),
               ),
               const Divider(
                 color: Colors.grey,
