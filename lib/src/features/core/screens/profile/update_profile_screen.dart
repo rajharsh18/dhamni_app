@@ -3,7 +3,9 @@ import 'package:dhamni/src/constants/image_strings.dart';
 import 'package:dhamni/src/constants/sizes.dart';
 import 'package:dhamni/src/constants/text_strings.dart';
 import 'package:dhamni/src/features/authentication/models/user_model.dart';
+import 'package:dhamni/src/features/authentication/screens/forget_password/forget_password_options/forget_password_modal_bottom_btn_widget.dart';
 import 'package:dhamni/src/features/core/controllers/profile_controller.dart';
+import 'package:dhamni/src/features/core/screens/dashboard/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
@@ -13,7 +15,6 @@ class UpdateProfileScreen extends StatelessWidget {
 
   late String college_id;
   final password = "password";
-  // final collegeName = "Cluster Innovation Centre (CIC)";
   final _college = [
     "Select College Name",
     "Acharya Narendra Dev College",
@@ -256,6 +257,7 @@ class UpdateProfileScreen extends StatelessWidget {
 
                                 await controller.UpdateRecord(
                                     user, userNewData);
+                                Get.offAll(const Dashboard());
                               },
                               child: const Text(tEditProfile),
                               style: ElevatedButton.styleFrom(
@@ -268,23 +270,26 @@ class UpdateProfileScreen extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text.rich(
-                                TextSpan(
-                                  text: tJoined,
-                                  style: TextStyle(fontSize: 12),
-                                  children: [
-                                    TextSpan(
-                                      text: tJoinedAt,
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 12,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                              // Text.rich(
+                              // TextSpan(
+                              //   text: tJoined,
+                              //   style: TextStyle(fontSize: 12),
+                              //   children: [
+                              //     TextSpan(
+                              //       text: tJoinedAt,
+                              //       style: TextStyle(
+                              //         fontWeight: FontWeight.bold,
+                              //         fontSize: 12,
+                              //       ),
+                              //     ),
+                              //   ],
+                              // ),
+                              // ),
                               ElevatedButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    ForgetPasswordScreen
+                                        .buildShoeModalBottomSheet(context);
+                                  },
                                   style: ElevatedButton.styleFrom(
                                       backgroundColor:
                                           Colors.redAccent.withOpacity(0.1),
@@ -292,7 +297,7 @@ class UpdateProfileScreen extends StatelessWidget {
                                       foregroundColor: Colors.red,
                                       shape: const StadiumBorder(),
                                       side: BorderSide.none),
-                                  child: const Text(tDelete))
+                                  child: const Text(tForgetPassword))
                             ],
                           )
                         ],

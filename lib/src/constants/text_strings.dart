@@ -20,7 +20,7 @@ const String tWelcomeSubTitle = "Connecting Blood";
 // -- Login Screen Text
 const String tLoginTitle = "Welcome Back,";
 const String tLoginSubTitle = "Make it work, make it right, make it fast.";
-const String tRememberMe = "Remember Me?";
+// const String tRememberMe = "Remember Me?";
 const String tDontHaveAnAccount = "Don't have an Account? ";
 
 // -- Sign Up Screen Text
@@ -49,8 +49,8 @@ const String tOtpSubTitle = "Verirification";
 const String tOtpMessage = "Enter the verification code sent at ";
 
 // -- Dashboard - Text
-const String tDashboardTitle = "Hey, Coding with T";
-const String tDashboardSubTitle = "Hey, Coding with T";
+// const String tDashboardTitle = "Hey, Coding with T";
+const String tDashboardSubTitle = "How's your Day??";
 const String tDashboardSearch = "Search...";
 
 // --Profile Screen - Text
@@ -58,13 +58,11 @@ const String tDashboardSearch = "Search...";
 const String tProfile = "Profile";
 const String tEditProfile = "Edit Profile";
 const String tLogoutDialogHeading = "Logout";
-const String tProfileHeading = "Coding With Harsh";
-const String tProfileSubHeading = "harsh@gmail.com";
 // const String tMenu5 = tLogout;
-const String tMenu4 = "User MAnagement";
-const String tMenu3 = "Billing Details";
-const String tMenu2 = "Informations";
-const String tMenu1 = "Settings";
+// const String tMenu4 = "User Management";
+// const String tMenu3 = "Billing Details";
+// const String tMenu2 = "Informations";
+// const String tMenu1 = "Settings";
 const String tDelete = "Delete";
 const String tJoined = "Joined";
 const String tJoinedAt = "31 October 2022";
