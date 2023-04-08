@@ -9,7 +9,20 @@ import 'package:get/get.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
 class UpdateProfileScreen extends StatelessWidget {
-  const UpdateProfileScreen({Key? key}) : super(key: key);
+  UpdateProfileScreen({Key? key}) : super(key: key);
+
+  late String country_id;
+  final _country = [
+    "America",
+    "Brazil",
+    "Canada",
+    "India",
+    "Mongalia",
+    "USA",
+    "China",
+    "Russia",
+    "Germany"
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -94,12 +107,28 @@ class UpdateProfileScreen extends StatelessWidget {
                                 prefixIcon: Icon(Icons.numbers)),
                           ),
                           const SizedBox(height: tFormHeight - 20),
-                          TextFormField(
-                            initialValue: userData.password,
+                          DropdownButtonFormField(
+                            // value: userData.collegeName,
                             decoration: const InputDecoration(
-                                label: Text(tPassword),
-                                prefixIcon: Icon(Icons.fingerprint)),
+                                label: Text(tCollegeName),
+                                prefixIcon: Icon(Icons.add_home_rounded)),
+                            items: _country
+                                .map((e) => DropdownMenuItem(
+                                      child: Text(e),
+                                      value: e,
+                                    ))
+                                .toList(),
+                            onChanged: (dynamic value) {
+                              country_id = value;
+                            },
                           ),
+                          // const SizedBox(height: tFormHeight - 20),
+                          // TextFormField(
+                          //   initialValue: userData.password,
+                          //   decoration: const InputDecoration(
+                          //       label: Text(tPassword),
+                          //       prefixIcon: Icon(Icons.fingerprint)),
+                          // ),
                           const SizedBox(height: tFormHeight - 20),
                           SizedBox(
                             width: double.infinity,

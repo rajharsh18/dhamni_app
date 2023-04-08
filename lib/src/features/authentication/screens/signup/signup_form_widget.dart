@@ -12,6 +12,8 @@ class SignUpForm extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(SignUpController());
     final _formKey = GlobalKey<FormState>();
+    const password = "password";
+    const collegeName = "College Name";
 
     return Container(
       padding: const EdgeInsets.symmetric(vertical: tFormHeight - 10),
@@ -21,6 +23,12 @@ class SignUpForm extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextFormField(
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter Your Name.';
+                }
+                return null;
+              },
               controller: controller.fullName,
               decoration: const InputDecoration(
                   label: Text(tFullName),
@@ -28,26 +36,38 @@ class SignUpForm extends StatelessWidget {
             ),
             const SizedBox(height: tFormHeight - 20),
             TextFormField(
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter Email ID.';
+                }
+                return null;
+              },
               controller: controller.email,
               decoration: const InputDecoration(
                   label: Text(tEmail), prefixIcon: Icon(Icons.email_outlined)),
             ),
             const SizedBox(height: tFormHeight - 20),
             TextFormField(
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter Phone Number.';
+                }
+                return null;
+              },
               controller: controller.phoneNo,
               decoration: const InputDecoration(
                   label: Text(tPhoneNo), prefixIcon: Icon(Icons.numbers)),
             ),
             const SizedBox(height: tFormHeight - 20),
-            TextFormField(
-              controller: controller.password,
-              obscureText: true,
-              decoration: const InputDecoration(
-                label: Text(tPassword),
-                prefixIcon: Icon(Icons.fingerprint),
-              ),
-            ),
-            const SizedBox(height: tFormHeight - 10),
+            // TextFormField(
+            //   controller: controller.password,
+            //   obscureText: true,
+            //   decoration: const InputDecoration(
+            //     label: Text(tPassword),
+            //     prefixIcon: Icon(Icons.fingerprint),
+            //   ),
+            // ),
+            // const SizedBox(height: tFormHeight - 10),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -55,9 +75,10 @@ class SignUpForm extends StatelessWidget {
                   if (_formKey.currentState!.validate()) {
                     final user = UserModel(
                       email: controller.email.text.trim(),
-                      password: controller.password.text.trim(),
+                      password: password,
                       phoneNo: controller.phoneNo.text.trim(),
                       fullName: controller.fullName.text.trim(),
+                      collegeName: collegeName,
                     );
                     SignUpController.instance.createUser(user);
 

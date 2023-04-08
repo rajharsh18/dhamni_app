@@ -18,6 +18,7 @@ dependencies:
   firebase_auth: ^4.3.0
   line_awesome_flutter: ^2.0.0
   cloud_firestore: ^4.5.0
+  dropdownfield: ^1.0.3
   
 
 dev_dependencies:
