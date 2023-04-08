@@ -3,6 +3,7 @@ import 'package:dhamni/src/constants/image_strings.dart';
 import 'package:dhamni/src/constants/sizes.dart';
 import 'package:dhamni/src/constants/text_strings.dart';
 import 'package:dhamni/src/features/authentication/models/user_model.dart';
+import 'package:dhamni/src/features/authentication/screens/forget_password/forget_password_options/forget_password_modal_bottom_btn_widget.dart';
 import 'package:dhamni/src/features/core/controllers/profile_controller.dart';
 import 'package:dhamni/src/features/core/screens/profile/all_users.dart';
 import 'package:dhamni/src/features/core/screens/profile/update_profile_screen.dart';
@@ -82,10 +83,14 @@ class ProfileScreen extends StatelessWidget {
                       ),
                       Text(
                         userData.fullName,
+                        textAlign: TextAlign.center,
+                        maxLines: null,
                         style: Theme.of(context).textTheme.headlineMedium,
                       ),
                       Text(
                         userData.email,
+                        maxLines: null,
+                        textAlign: TextAlign.center,
                         style: Theme.of(context).textTheme.headlineSmall,
                       ),
                       const SizedBox(
@@ -131,9 +136,12 @@ class ProfileScreen extends StatelessWidget {
                         height: 10,
                       ),
                       ProfileMenuWidget(
-                        title: "Information",
-                        icon: LineAwesomeIcons.info,
-                        onPress: () {},
+                        title: "Reset Password",
+                        icon: LineAwesomeIcons.ice_cream,
+                        onPress: () {
+                          ForgetPasswordScreen.buildShoeModalBottomSheet(
+                              context);
+                        },
                       ),
                       ProfileMenuWidget(
                         title: "Logout",

@@ -13,7 +13,7 @@ class SignUpForm extends StatelessWidget {
     final controller = Get.put(SignUpController());
     final _formKey = GlobalKey<FormState>();
     const password = "password";
-    const collegeName = "College Name";
+    const collegeName = "Select College Name";
 
     return Container(
       padding: const EdgeInsets.symmetric(vertical: tFormHeight - 10),

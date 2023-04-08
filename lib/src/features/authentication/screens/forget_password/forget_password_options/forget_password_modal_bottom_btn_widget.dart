@@ -37,15 +37,15 @@ class ForgetPasswordScreen {
           SizedBox(
             height: tFormHeight - 20.0,
           ),
-          ForgetPasswordBtnWidget(
-            btnIcon: Icons.mobile_friendly_rounded,
-            title: tPhoneNo,
-            subTitle: tResetViaPhone,
-            onTap: () {
-              Navigator.pop(context);
-              Get.to(() => ForgetPasswordPhoneScreen());
-            },
-          ),
+          // ForgetPasswordBtnWidget(
+          //   btnIcon: Icons.mobile_friendly_rounded,
+          //   title: tPhoneNo,
+          //   subTitle: tResetViaPhone,
+          //   onTap: () {
+          //     Navigator.pop(context);
+          //     Get.to(() => ForgetPasswordPhoneScreen());
+          //   },
+          // ),
         ]),
       ),
     );

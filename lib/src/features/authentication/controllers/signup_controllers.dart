@@ -10,9 +10,10 @@ class SignUpController extends GetxController {
 
   //TextField Controllers to get data from TextFields
   final email = TextEditingController();
-  final password = TextEditingController();
+  // final password = TextEditingController();
   final fullName = TextEditingController();
   final phoneNo = TextEditingController();
+  // final CollegeName = TextEditingController();
 
   final userRepo = Get.put(UserRepository());
 
