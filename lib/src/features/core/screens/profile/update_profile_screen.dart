@@ -12,6 +12,8 @@ class UpdateProfileScreen extends StatelessWidget {
   UpdateProfileScreen({Key? key}) : super(key: key);
 
   late String college_id;
+  final password = "password";
+  // final collegeName = "Cluster Innovation Centre (CIC)";
   final _college = [
     "Select College Name",
     "Acharya Narendra Dev College",
@@ -143,7 +145,12 @@ class UpdateProfileScreen extends StatelessWidget {
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.done) {
               if (snapshot.hasData) {
-                UserModel userData = snapshot.data as UserModel;
+                UserModel user = snapshot.data as UserModel;
+
+                final email = TextEditingController(text: user.email);
+                final fullName = TextEditingController(text: user.fullName);
+                final phoneNo = TextEditingController(text: user.phoneNo);
+
                 return Column(
                   children: [
                     Stack(
@@ -184,7 +191,7 @@ class UpdateProfileScreen extends StatelessWidget {
                       child: Column(
                         children: [
                           TextFormField(
-                            initialValue: userData.fullName,
+                            controller: fullName,
                             minLines: null,
                             maxLines: null,
                             decoration: const InputDecoration(
@@ -193,7 +200,7 @@ class UpdateProfileScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: tFormHeight - 20),
                           TextFormField(
-                            initialValue: userData.email,
+                            controller: email,
                             minLines: null,
                             maxLines: null,
                             decoration: const InputDecoration(
@@ -202,7 +209,7 @@ class UpdateProfileScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: tFormHeight - 20),
                           TextFormField(
-                            initialValue: userData.phoneNo,
+                            controller: phoneNo,
                             minLines: null,
                             maxLines: null,
                             decoration: const InputDecoration(
@@ -211,7 +218,7 @@ class UpdateProfileScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: tFormHeight - 20),
                           DropdownButtonFormField(
-                            value: userData.collegeName,
+                            value: user.collegeName,
                             itemHeight: null,
                             isExpanded: true,
                             decoration: const InputDecoration(
@@ -238,8 +245,18 @@ class UpdateProfileScreen extends StatelessWidget {
                           SizedBox(
                             width: double.infinity,
                             child: ElevatedButton(
-                              onPressed: () =>
-                                  Get.to(() => UpdateProfileScreen()),
+                              onPressed: () async {
+                                final userNewData = UserModel(
+                                  email: email.text.trim(),
+                                  password: password,
+                                  phoneNo: phoneNo.text.trim(),
+                                  fullName: fullName.text.trim(),
+                                  collegeName: college_id,
+                                );
+
+                                await controller.UpdateRecord(
+                                    user, userNewData);
+                              },
                               child: const Text(tEditProfile),
                               style: ElevatedButton.styleFrom(
                                 side: BorderSide.none,
