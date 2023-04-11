@@ -3,10 +3,14 @@ import 'package:dhamni/src/constants/image_strings.dart';
 import 'package:dhamni/src/constants/sizes.dart';
 import 'package:dhamni/src/constants/text_strings.dart';
 import 'package:dhamni/src/features/authentication/models/user_model.dart';
+import 'package:dhamni/src/features/blood_forms/all_request.dart';
+import 'package:dhamni/src/features/blood_forms/blood_donate_form.dart';
 import 'package:dhamni/src/features/core/controllers/profile_controller.dart';
 import 'package:dhamni/src/features/core/screens/profile/profile_screen.dart';
+import 'package:dhamni/src/features/core/screens/profile/widgets/profile_menu.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -62,48 +66,66 @@ class Dashboard extends StatelessWidget {
                           style: txtTheme.headlineMedium,
                         ),
                         Text(
-                          tDashboardSubTitle,
-                          style: txtTheme.bodyMedium,
+                          userData.collegeName,
+                          style: txtTheme.bodyLarge,
                         ),
                         const SizedBox(
                           height: tDashboardPadding,
                         ),
+                        const Divider(
+                          color: Colors.grey,
+                        ),
                         Container(
-                          decoration: const BoxDecoration(
-                              border: Border(left: BorderSide(width: 4))),
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 10, vertical: 5),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          child: Column(
                             children: [
-                              Text(tDashboardSearch,
-                                  style: txtTheme.headlineMedium?.apply(
-                                      color: Colors.grey.withOpacity(0.5))),
-                              const Icon(Icons.mic, size: 25),
+                              ProfileMenuWidget(
+                                title: tAsk,
+                                tileColor: Color.fromARGB(255, 255, 255, 255),
+                                textColor: Color.fromARGB(255, 0, 0, 0),
+                                iconIconColor: tAccentColor,
+                                iconCircleColor:
+                                    Color.fromARGB(255, 7, 78, 136),
+                                endIconColor: Colors.grey,
+                                endCircleColor: Colors.grey,
+                                icon: LineAwesomeIcons.plus_circle,
+                                onPress: () => Get.to(() => BloodDonate()),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              ProfileMenuWidget(
+                                title: tDemanded,
+                                tileColor: Color.fromARGB(255, 255, 255, 255),
+                                textColor: Color.fromARGB(255, 0, 0, 0),
+                                iconIconColor: tAccentColor,
+                                iconCircleColor:
+                                    Color.fromARGB(255, 7, 78, 136),
+                                endIconColor: Colors.grey,
+                                endCircleColor: Colors.grey,
+                                icon: LineAwesomeIcons.alternate_file,
+                                onPress: () => Get.to(() => AllRequest()),
+                              ),
+                              Divider(
+                                color: Color.fromARGB(255, 0, 0, 0),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              ProfileMenuWidget(
+                                title: tDemanded,
+                                tileColor: Color.fromARGB(255, 255, 255, 255),
+                                textColor: Color.fromARGB(255, 0, 0, 0),
+                                iconIconColor: tAccentColor,
+                                iconCircleColor:
+                                    Color.fromARGB(255, 7, 78, 136),
+                                endIconColor: Colors.grey,
+                                endCircleColor: Colors.grey,
+                                icon: LineAwesomeIcons.alternate_file,
+                                onPress: () {},
+                              ),
                             ],
                           ),
                         ),
-                        SizedBox(
-                          width: 170,
-                          height: 50,
-                          child: Row(
-                            children: [
-                              Container(
-                                  width: 45,
-                                  height: 45,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      color: tDarkColor),
-                                  child: Center(
-                                    child: Text(
-                                      "JS",
-                                      style: txtTheme.headlineSmall
-                                          ?.apply(color: Colors.white),
-                                    ),
-                                  ))
-                            ],
-                          ),
-                        )
                       ],
                     );
                   } else if (snapshot.hasError) {

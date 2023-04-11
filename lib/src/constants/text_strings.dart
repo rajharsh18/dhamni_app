@@ -9,6 +9,7 @@ const String tPhoneNo = "Phone No";
 const String tCollegeName = "College Name";
 const String tPassword = "Password";
 const String tFullName = "Full Name";
+const String tPinCode = "Pin Code";
 const String tForgetPassword = "Forget Password";
 const String tSignInWithGoogle = "Sign-In with Google";
 
@@ -34,6 +35,7 @@ const String tForgetPasswordSubTitle =
     "Select one of the options given below to reset your password.";
 const String tResetViaEMail = "Reset via Mail Verification";
 const String tResetViaPhone = "Reset via Phone Verification";
+const String tResetPassword = "Reset Password";
 
 // -- Forget Password Via Phone - Text
 const String tForgetPhoneSubTitle =
@@ -66,3 +68,14 @@ const String tLogoutDialogHeading = "Logout";
 const String tDelete = "Delete";
 const String tJoined = "Joined";
 const String tJoinedAt = "31 October 2022";
+const String tAsk = "Ask";
+const String tDemanded = "Demanded";
+
+// Patient details
+const String tPatientName = "Patient's Name";
+// const String tPinCode = "Pin Code";
+const String tReqBlood = "Required Blood Group";
+const String tReqUnit = "No. of Units Required";
+const String tBloodGroup = "";
+const String tSubmit = "Submit";
+const String tBloodForm = "Raise Blood Request";

@@ -13,8 +13,8 @@ import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 class UpdateProfileScreen extends StatelessWidget {
   UpdateProfileScreen({Key? key}) : super(key: key);
 
+  // ignore: non_constant_identifier_names
   late String college_id;
-  final password = "password";
   final _college = [
     "Select College Name",
     "Acharya Narendra Dev College",
@@ -147,10 +147,9 @@ class UpdateProfileScreen extends StatelessWidget {
             if (snapshot.connectionState == ConnectionState.done) {
               if (snapshot.hasData) {
                 UserModel user = snapshot.data as UserModel;
-
-                final email = TextEditingController(text: user.email);
                 final fullName = TextEditingController(text: user.fullName);
-                final phoneNo = TextEditingController(text: user.phoneNo);
+                final pinCode = TextEditingController(text: user.pinCode);
+                college_id = user.collegeName;
 
                 return Column(
                   children: [
@@ -201,7 +200,7 @@ class UpdateProfileScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: tFormHeight - 20),
                           TextFormField(
-                            controller: email,
+                            initialValue: user.email,
                             minLines: null,
                             maxLines: null,
                             decoration: const InputDecoration(
@@ -210,7 +209,7 @@ class UpdateProfileScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: tFormHeight - 20),
                           TextFormField(
-                            controller: phoneNo,
+                            initialValue: user.phoneNo,
                             minLines: null,
                             maxLines: null,
                             decoration: const InputDecoration(
@@ -219,7 +218,7 @@ class UpdateProfileScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: tFormHeight - 20),
                           DropdownButtonFormField(
-                            value: user.collegeName,
+                            value: college_id,
                             itemHeight: null,
                             isExpanded: true,
                             decoration: const InputDecoration(
@@ -235,24 +234,26 @@ class UpdateProfileScreen extends StatelessWidget {
                               college_id = value!;
                             },
                           ),
-                          // const SizedBox(height: tFormHeight - 20),
-                          // TextFormField(
-                          //   initialValue: userData.password,
-                          //   decoration: const InputDecoration(
-                          //       label: Text(tPassword),
-                          //       prefixIcon: Icon(Icons.fingerprint)),
-                          // ),
+                          TextFormField(
+                            controller: pinCode,
+                            minLines: null,
+                            maxLines: null,
+                            decoration: const InputDecoration(
+                                label: Text(tPinCode),
+                                prefixIcon: Icon(Icons.numbers_outlined)),
+                          ),
                           const SizedBox(height: tFormHeight - 20),
                           SizedBox(
                             width: double.infinity,
                             child: ElevatedButton(
                               onPressed: () async {
                                 final userNewData = UserModel(
-                                  email: email.text.trim(),
-                                  password: password,
-                                  phoneNo: phoneNo.text.trim(),
+                                  email: user.email,
+                                  password: user.password,
+                                  phoneNo: user.phoneNo,
                                   fullName: fullName.text.trim(),
                                   collegeName: college_id,
+                                  pinCode: pinCode.text.trim(),
                                 );
 
                                 await controller.UpdateRecord(
@@ -297,7 +298,7 @@ class UpdateProfileScreen extends StatelessWidget {
                                       foregroundColor: Colors.red,
                                       shape: const StadiumBorder(),
                                       side: BorderSide.none),
-                                  child: const Text(tForgetPassword))
+                                  child: const Text(tResetPassword))
                             ],
                           )
                         ],

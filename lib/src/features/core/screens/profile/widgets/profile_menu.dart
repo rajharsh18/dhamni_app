@@ -1,4 +1,3 @@
-import 'package:dhamni/src/constants/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
@@ -10,6 +9,11 @@ class ProfileMenuWidget extends StatelessWidget {
     required this.onPress,
     this.endIcon = true,
     this.textColor,
+    this.tileColor,
+    this.endCircleColor,
+    this.endIconColor,
+    this.iconCircleColor,
+    this.iconIconColor,
   });
 
   final String title;
@@ -17,21 +21,27 @@ class ProfileMenuWidget extends StatelessWidget {
   final VoidCallback onPress;
   final bool endIcon;
   final Color? textColor;
+  final Color? tileColor;
+  final Color? endCircleColor;
+  final Color? endIconColor;
+  final Color? iconCircleColor;
+  final Color? iconIconColor;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      tileColor: tileColor,
       onTap: onPress,
       leading: Container(
         width: 40,
         height: 40,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(100),
-          color: tAccentColor.withOpacity(0.1),
+          color: iconCircleColor?.withOpacity(0.1),
         ),
         child: Icon(
           icon,
-          color: tAccentColor,
+          color: iconIconColor,
         ),
       ),
       title: Text(
@@ -44,11 +54,11 @@ class ProfileMenuWidget extends StatelessWidget {
               height: 30,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(100),
-                color: Colors.grey.withOpacity(0.1),
+                color: endCircleColor?.withOpacity(0.1),
               ),
               child: Icon(
                 LineAwesomeIcons.angle_right,
-                color: Colors.grey,
+                color: endIconColor,
                 size: 18.0,
               ),
             )

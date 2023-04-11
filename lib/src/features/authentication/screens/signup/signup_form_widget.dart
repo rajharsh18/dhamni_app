@@ -14,6 +14,7 @@ class SignUpForm extends StatelessWidget {
     final _formKey = GlobalKey<FormState>();
     const password = "password";
     const collegeName = "Select College Name";
+    const pinCode = "";
 
     return Container(
       padding: const EdgeInsets.symmetric(vertical: tFormHeight - 10),
@@ -79,6 +80,7 @@ class SignUpForm extends StatelessWidget {
                       phoneNo: controller.phoneNo.text.trim(),
                       fullName: controller.fullName.text.trim(),
                       collegeName: collegeName,
+                      pinCode: pinCode,
                     );
                     SignUpController.instance.createUser(user);
 

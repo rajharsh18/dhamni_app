@@ -117,16 +117,22 @@ class ProfileScreen extends StatelessWidget {
                       ProfileMenuWidget(
                         title: "Setting",
                         icon: LineAwesomeIcons.cog,
+                        iconIconColor: tAccentColor,
+                        iconCircleColor: tAccentColor,
                         onPress: () {},
                       ),
                       ProfileMenuWidget(
                         title: "Billing Details",
                         icon: LineAwesomeIcons.wallet,
+                        iconIconColor: tAccentColor,
+                        iconCircleColor: tAccentColor,
                         onPress: () {},
                       ),
                       ProfileMenuWidget(
                         title: "User Management",
                         icon: LineAwesomeIcons.user_check,
+                        iconIconColor: tAccentColor,
+                        iconCircleColor: tAccentColor,
                         onPress: () => Get.to(() => AllUsers()),
                       ),
                       const Divider(
@@ -136,7 +142,9 @@ class ProfileScreen extends StatelessWidget {
                         height: 10,
                       ),
                       ProfileMenuWidget(
-                        title: "Reset Password",
+                        title: tResetPassword,
+                        iconIconColor: tAccentColor,
+                        iconCircleColor: tAccentColor,
                         icon: LineAwesomeIcons.ice_cream,
                         onPress: () {
                           ForgetPasswordScreen.buildShoeModalBottomSheet(
