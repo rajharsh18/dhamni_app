@@ -35,7 +35,7 @@ class OTPScreen extends StatelessWidget {
             Text(tOtpSubTitle.toUpperCase(),
                 style: Theme.of(context).textTheme.headlineMedium),
             const SizedBox(height: 40.0),
-            const Text("$tOtpMessage support@codingwitht.com",
+            const Text("$tOtpMessage dhamni.cic@gmail.com",
                 textAlign: TextAlign.center),
             const SizedBox(height: 20.0),
             OtpTextField(
@@ -43,7 +43,6 @@ class OTPScreen extends StatelessWidget {
                 numberOfFields: 6,
                 fillColor: Colors.black.withOpacity(0.1),
                 filled: true,
-                // onSubmit: (code) => print("OTP is => $code")),
                 onSubmit: (code) {
                   otp = code;
                   OTPController.instance.verifyOTP(otp, email!, password!);

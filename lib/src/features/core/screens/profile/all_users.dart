@@ -31,7 +31,6 @@ class AllUsers extends StatelessWidget {
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.done) {
                 if (snapshot.hasData) {
-                  // UserModel userData = snapshot.data as UserModel;
                   return ListView.builder(
                     shrinkWrap: true,
                     itemCount: snapshot.data!.length,

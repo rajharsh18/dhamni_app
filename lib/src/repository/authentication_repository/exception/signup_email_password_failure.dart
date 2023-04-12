@@ -6,9 +6,6 @@ class SignUpWithEmailAndPasswordFailure {
 
   factory SignUpWithEmailAndPasswordFailure.code(String code) {
     switch (code) {
-      case 'weak-password':
-        return SignUpWithEmailAndPasswordFailure(
-            'Please Enter a Stronger Password.');
       case 'invalid-email':
         return SignUpWithEmailAndPasswordFailure('Email is not valid.');
       case 'email-already-in-use':
