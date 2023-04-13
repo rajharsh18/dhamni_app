@@ -194,9 +194,13 @@ class UpdateProfileScreen extends StatelessWidget {
                             controller: fullName,
                             minLines: null,
                             maxLines: null,
-                            decoration: const InputDecoration(
-                                label: Text(tFullName),
-                                prefixIcon: Icon(Icons.person_outline_rounded)),
+                            decoration: InputDecoration(
+                              prefixIcon: Icon(Icons.person_outline_rounded),
+                              labelText: tFullName,
+                              hintText: tFullName,
+                              // border: OutlineInputBorder(),
+                            ),
+                            style: TextStyle(fontSize: 20),
                           ),
                           const SizedBox(height: tFormHeight - 20),
                           TextFormField(
@@ -205,8 +209,10 @@ class UpdateProfileScreen extends StatelessWidget {
                             minLines: null,
                             maxLines: null,
                             decoration: const InputDecoration(
-                                label: Text(tEmail),
+                                labelText: tEmail,
+                                hintText: tEmail,
                                 prefixIcon: Icon(Icons.email_outlined)),
+                            style: TextStyle(fontSize: 20),
                           ),
                           const SizedBox(height: tFormHeight - 20),
                           TextFormField(
@@ -215,8 +221,11 @@ class UpdateProfileScreen extends StatelessWidget {
                             minLines: null,
                             maxLines: null,
                             decoration: const InputDecoration(
-                                label: Text(tPhoneNo),
-                                prefixIcon: Icon(Icons.numbers)),
+                              labelText: tPhoneNo,
+                              hintText: tPhoneNo,
+                              prefixIcon: Icon(Icons.numbers),
+                            ),
+                            style: TextStyle(fontSize: 20),
                           ),
                           const SizedBox(height: tFormHeight - 20),
                           DropdownButtonFormField(
@@ -226,6 +235,10 @@ class UpdateProfileScreen extends StatelessWidget {
                             decoration: const InputDecoration(
                                 label: Text(tCollegeName),
                                 prefixIcon: Icon(Icons.home_rounded)),
+                            style: TextStyle(fontSize: 20, color: Colors.black),
+
+                            // dropdownColor: Colors.black,
+                            // focusColor: Colors.black,
                             items: _college
                                 .map((e) => DropdownMenuItem(
                                       child: Text(e),
@@ -243,6 +256,7 @@ class UpdateProfileScreen extends StatelessWidget {
                             decoration: const InputDecoration(
                                 label: Text(tPinCode),
                                 prefixIcon: Icon(Icons.numbers_outlined)),
+                            style: TextStyle(fontSize: 20),
                           ),
                           const SizedBox(height: tFormHeight - 20),
                           SizedBox(

@@ -47,9 +47,13 @@ class SignUpForm extends StatelessWidget {
                           return null;
                         },
                         controller: controller.fullName,
-                        decoration: const InputDecoration(
-                            label: Text(tFullName),
-                            prefixIcon: Icon(Icons.person_outline_rounded)),
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.person_outline_rounded),
+                          labelText: tFullName,
+                          hintText: tFullName,
+                          // border: OutlineInputBorder(),
+                        ),
+                        style: TextStyle(fontSize: 20),
                       ),
                       const SizedBox(height: tFormHeight - 20),
                       TextFormField(
@@ -62,9 +66,13 @@ class SignUpForm extends StatelessWidget {
                           return null;
                         },
                         controller: controller.email,
-                        decoration: const InputDecoration(
-                            label: Text(tEmail),
-                            prefixIcon: Icon(Icons.email_outlined)),
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.email_outlined),
+                          labelText: tEmail,
+                          hintText: tEmail,
+                          // border: OutlineInputBorder(),
+                        ),
+                        style: TextStyle(fontSize: 20),
                       ),
                       const SizedBox(height: tFormHeight - 20),
                       TextFormField(
@@ -77,9 +85,13 @@ class SignUpForm extends StatelessWidget {
                           return null;
                         },
                         controller: controller.phoneNo,
-                        decoration: const InputDecoration(
-                            label: Text(tPhoneNo),
-                            prefixIcon: Icon(Icons.numbers)),
+                        decoration: InputDecoration(
+                          prefixIcon: Icon(Icons.numbers),
+                          labelText: tPhoneNo,
+                          hintText: tPhoneNo,
+                          // border: OutlineInputBorder(),
+                        ),
+                        style: TextStyle(fontSize: 20),
                       ),
                       const SizedBox(height: tFormHeight - 20),
                       SizedBox(

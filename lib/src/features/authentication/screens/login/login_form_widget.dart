@@ -27,10 +27,12 @@ class LoginForm extends StatelessWidget {
             TextFormField(
               controller: controller.email,
               decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.person_outline_outlined),
-                  labelText: tEmail,
-                  hintText: tEmail,
-                  border: OutlineInputBorder()),
+                prefixIcon: Icon(Icons.person_outline_outlined),
+                labelText: tEmail,
+                hintText: tEmail,
+                // border: OutlineInputBorder(),
+              ),
+              style: TextStyle(fontSize: 20),
             ),
             SizedBox(
               height: tFormHeight - 20,
@@ -39,14 +41,16 @@ class LoginForm extends StatelessWidget {
               controller: controller.password,
               obscureText: true,
               decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.fingerprint),
-                  labelText: tPassword,
-                  hintText: tPassword,
-                  border: OutlineInputBorder(),
-                  suffixIcon: IconButton(
-                    onPressed: null,
-                    icon: Icon(Icons.remove_red_eye_sharp),
-                  )),
+                prefixIcon: Icon(Icons.fingerprint),
+                labelText: tPassword,
+                hintText: tPassword,
+                // border: OutlineInputBorder(),
+                // suffixIcon: IconButton(
+                //   onPressed: null,
+                //   icon: Icon(Icons.remove_red_eye_sharp),
+                // ),
+              ),
+              style: TextStyle(fontSize: 20),
             ),
             SizedBox(
               height: tFormHeight - 20,
