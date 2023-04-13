@@ -1,7 +1,7 @@
 import 'package:dhamni/src/constants/sizes.dart';
 import 'package:dhamni/src/constants/text_strings.dart';
 import 'package:dhamni/src/features/blood_forms/blood_data.dart';
-import 'package:dhamni/src/features/blood_forms/blood_donate_controller.dart';
+import 'package:dhamni/src/features/blood_forms/blood_request_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
@@ -19,8 +19,8 @@ class AllRequest extends StatelessWidget {
           icon: const Icon(LineAwesomeIcons.angle_left),
         ),
         title: Text(
-          tEditProfile,
-          style: Theme.of(context).textTheme.headlineMedium,
+          tDemanded,
+          style: Theme.of(context).textTheme.headlineSmall,
         ),
       ),
       body: SingleChildScrollView(

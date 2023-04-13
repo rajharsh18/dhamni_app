@@ -5,7 +5,8 @@ import 'package:dhamni/src/constants/text_strings.dart';
 import 'package:dhamni/src/features/authentication/models/user_model.dart';
 import 'package:dhamni/src/features/authentication/screens/forget_password/forget_password_options/forget_password_modal_bottom_btn_widget.dart';
 import 'package:dhamni/src/features/core/controllers/profile_controller.dart';
-import 'package:dhamni/src/features/core/screens/profile/all_users.dart';
+import 'package:dhamni/src/features/core/screens/profile/my_active_requests.dart';
+import 'package:dhamni/src/features/core/screens/profile/my_completed_requests.dart';
 import 'package:dhamni/src/features/core/screens/profile/update_profile_screen.dart';
 import 'package:dhamni/src/features/core/screens/profile/widgets/profile_menu.dart';
 import 'package:dhamni/src/repository/authentication_repository/authentication_repository.dart';
@@ -27,7 +28,7 @@ class ProfileScreen extends StatelessWidget {
         ),
         title: Text(
           tProfile,
-          style: Theme.of(context).textTheme.headlineMedium,
+          style: Theme.of(context).textTheme.headlineSmall,
         ),
         actions: [
           IconButton(
@@ -115,26 +116,26 @@ class ProfileScreen extends StatelessWidget {
                         height: 10,
                       ),
                       ProfileMenuWidget(
-                        title: "Setting",
-                        icon: LineAwesomeIcons.cog,
+                        title: "My Active requests",
+                        icon: LineAwesomeIcons.google_wallet,
                         iconIconColor: tAccentColor,
                         iconCircleColor: tAccentColor,
-                        onPress: () {},
+                        onPress: () => Get.to(() => MyActiveRequests()),
                       ),
                       ProfileMenuWidget(
-                        title: "Billing Details",
-                        icon: LineAwesomeIcons.wallet,
-                        iconIconColor: tAccentColor,
-                        iconCircleColor: tAccentColor,
-                        onPress: () {},
-                      ),
-                      ProfileMenuWidget(
-                        title: "User Management",
+                        title: "My Completed Request",
                         icon: LineAwesomeIcons.user_check,
                         iconIconColor: tAccentColor,
                         iconCircleColor: tAccentColor,
-                        onPress: () => Get.to(() => AllUsers()),
+                        onPress: () => Get.to(() => MyCompletedRequests()),
                       ),
+                      // ProfileMenuWidget(
+                      //   title: "User Management",
+                      //   icon: LineAwesomeIcons.cog,
+                      //   iconIconColor: tAccentColor,
+                      //   iconCircleColor: tAccentColor,
+                      //   onPress: () => Get.to(() => AllUsers()),
+                      // ),
                       const Divider(
                         color: Colors.grey,
                       ),

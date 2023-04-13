@@ -30,13 +30,9 @@ class SignUpForm extends StatelessWidget {
               if (snapshot.connectionState == ConnectionState.done) {
                 if (snapshot.hasData) {
                   var itemCount = snapshot.data!.length;
-                  print(itemCount);
                   for (var i = itemCount - 1; i >= 0; i--) {
                     email_reg.add(snapshot.data![i].email);
                     phoneNo_reg.add(snapshot.data![i].phoneNo);
-
-                    print(email_reg);
-                    print(phoneNo_reg);
                   }
                   ;
 
@@ -86,15 +82,6 @@ class SignUpForm extends StatelessWidget {
                             prefixIcon: Icon(Icons.numbers)),
                       ),
                       const SizedBox(height: tFormHeight - 20),
-                      // TextFormField(
-                      //   controller: controller.password,
-                      //   obscureText: true,
-                      //   decoration: const InputDecoration(
-                      //     label: Text(tPassword),
-                      //     prefixIcon: Icon(Icons.fingerprint),
-                      //   ),
-                      // ),
-                      // const SizedBox(height: tFormHeight - 10),
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(

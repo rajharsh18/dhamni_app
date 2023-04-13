@@ -12,13 +12,32 @@ class BloodController extends GetxController {
   final pinCode = TextEditingController();
 
   final _bloodRepo = Get.put(BloodRepository());
-  final bloodRepo = Get.put(BloodRepository());
 
   Future<void> addRequest(BloodModel reqblood) async {
-    await bloodRepo.addRequest(reqblood);
+    await _bloodRepo.addRequest(reqblood);
   }
 
   Future<List<BloodModel>> getAllRequest() async {
     return await _bloodRepo.allBloodDetails();
+  }
+
+  Future<List<BloodModel>> getPincodeRequest(String pincode) async {
+    return await _bloodRepo.bloodDetailsPincode(pincode);
+  }
+
+  Future<List<BloodModel>> getCollegeRequest(String college) async {
+    return await _bloodRepo.bloodDetailsCollege(college);
+  }
+
+  Future<List<BloodModel>> getUserRequestActive(String email) async {
+    return await _bloodRepo.bloodDetailsUserActive(email);
+  }
+
+  Future<List<BloodModel>> getUserRequestCompleted(String email) async {
+    return await _bloodRepo.bloodDetailsUserCompleted(email);
+  }
+
+  UpdateBloodRecord(BloodModel reqBlood) async {
+    await _bloodRepo.updateBloodRecord(reqBlood);
   }
 }

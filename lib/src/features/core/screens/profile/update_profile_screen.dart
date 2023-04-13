@@ -135,7 +135,7 @@ class UpdateProfileScreen extends StatelessWidget {
         ),
         title: Text(
           tEditProfile,
-          style: Theme.of(context).textTheme.headlineMedium,
+          style: Theme.of(context).textTheme.headlineSmall,
         ),
       ),
       body: SingleChildScrollView(
@@ -200,6 +200,7 @@ class UpdateProfileScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: tFormHeight - 20),
                           TextFormField(
+                            readOnly: true,
                             initialValue: user.email,
                             minLines: null,
                             maxLines: null,
@@ -209,6 +210,7 @@ class UpdateProfileScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: tFormHeight - 20),
                           TextFormField(
+                            readOnly: true,
                             initialValue: user.phoneNo,
                             minLines: null,
                             maxLines: null,
@@ -258,7 +260,12 @@ class UpdateProfileScreen extends StatelessWidget {
 
                                 await controller.UpdateRecord(
                                     user, userNewData);
-                                Get.offAll(const Dashboard());
+                                Get.snackbar("Success", "Record Updated.",
+                                    snackPosition: SnackPosition.BOTTOM,
+                                    backgroundColor:
+                                        Colors.green.withOpacity(0.1),
+                                    colorText: Colors.green);
+                                Get.offAll(() => const Dashboard());
                               },
                               child: const Text(tEditProfile),
                               style: ElevatedButton.styleFrom(
@@ -271,21 +278,6 @@ class UpdateProfileScreen extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              // Text.rich(
-                              // TextSpan(
-                              //   text: tJoined,
-                              //   style: TextStyle(fontSize: 12),
-                              //   children: [
-                              //     TextSpan(
-                              //       text: tJoinedAt,
-                              //       style: TextStyle(
-                              //         fontWeight: FontWeight.bold,
-                              //         fontSize: 12,
-                              //       ),
-                              //     ),
-                              //   ],
-                              // ),
-                              // ),
                               ElevatedButton(
                                   onPressed: () {
                                     ForgetPasswordScreen

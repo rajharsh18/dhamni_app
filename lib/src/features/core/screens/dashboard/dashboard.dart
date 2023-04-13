@@ -4,7 +4,9 @@ import 'package:dhamni/src/constants/sizes.dart';
 import 'package:dhamni/src/constants/text_strings.dart';
 import 'package:dhamni/src/features/authentication/models/user_model.dart';
 import 'package:dhamni/src/features/blood_forms/all_request.dart';
-import 'package:dhamni/src/features/blood_forms/blood_donate_form.dart';
+import 'package:dhamni/src/features/blood_forms/all_request_college.dart';
+import 'package:dhamni/src/features/blood_forms/all_request_pincode.dart';
+import 'package:dhamni/src/features/blood_forms/blood_request_form.dart';
 import 'package:dhamni/src/features/core/controllers/profile_controller.dart';
 import 'package:dhamni/src/features/core/screens/profile/profile_screen.dart';
 import 'package:dhamni/src/features/core/screens/profile/widgets/profile_menu.dart';
@@ -17,7 +19,7 @@ class Dashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    // final size = MediaQuery.of(context).size;
     final txtTheme = Theme.of(context).textTheme;
     final controller = Get.put(ProfileController());
 
@@ -88,22 +90,7 @@ class Dashboard extends StatelessWidget {
                                 endIconColor: Colors.grey,
                                 endCircleColor: Colors.grey,
                                 icon: LineAwesomeIcons.plus_circle,
-                                onPress: () => Get.to(() => BloodDonate()),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              ProfileMenuWidget(
-                                title: tDemanded,
-                                tileColor: Color.fromARGB(255, 255, 255, 255),
-                                textColor: Color.fromARGB(255, 0, 0, 0),
-                                iconIconColor: tAccentColor,
-                                iconCircleColor:
-                                    Color.fromARGB(255, 7, 78, 136),
-                                endIconColor: Colors.grey,
-                                endCircleColor: Colors.grey,
-                                icon: LineAwesomeIcons.alternate_file,
-                                onPress: () => Get.to(() => AllRequest()),
+                                onPress: () => Get.to(() => Blood_request()),
                               ),
                               Divider(
                                 color: Color.fromARGB(255, 0, 0, 0),
@@ -121,7 +108,48 @@ class Dashboard extends StatelessWidget {
                                 endIconColor: Colors.grey,
                                 endCircleColor: Colors.grey,
                                 icon: LineAwesomeIcons.alternate_file,
-                                onPress: () {},
+                                onPress: () => Get.to(() => AllRequest()),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              ProfileMenuWidget(
+                                title: tDemandedCollege,
+                                tileColor: Color.fromARGB(255, 255, 255, 255),
+                                textColor: Color.fromARGB(255, 0, 0, 0),
+                                iconIconColor: tAccentColor,
+                                iconCircleColor:
+                                    Color.fromARGB(255, 7, 78, 136),
+                                endIconColor: Colors.grey,
+                                endCircleColor: Colors.grey,
+                                icon: LineAwesomeIcons.alternate_file,
+                                onPress: () =>
+                                    Get.to(() => AllRequestCollege()),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              ProfileMenuWidget(
+                                title: tDemandedPinCode,
+                                tileColor: Color.fromARGB(255, 255, 255, 255),
+                                textColor: Color.fromARGB(255, 0, 0, 0),
+                                iconIconColor: tAccentColor,
+                                iconCircleColor:
+                                    Color.fromARGB(255, 7, 78, 136),
+                                endIconColor: Colors.grey,
+                                endCircleColor: Colors.grey,
+                                icon: LineAwesomeIcons.alternate_file,
+                                onPress: () =>
+                                    Get.to(() => AllRequestPincode()),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Divider(
+                                color: Color.fromARGB(255, 0, 0, 0),
+                              ),
+                              SizedBox(
+                                height: 10,
                               ),
                             ],
                           ),

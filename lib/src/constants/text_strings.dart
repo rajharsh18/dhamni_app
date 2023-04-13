@@ -70,6 +70,10 @@ const String tJoined = "Joined";
 const String tJoinedAt = "31 October 2022";
 const String tAsk = "Ask";
 const String tDemanded = "Demanded";
+const String tDemandedPinCode = "Demanded at your PinCode";
+const String tDemandedCollege = "Demanded at your College";
+const String tMyActiveRequest = "My Active Request";
+const String tMyCompletedRequest = "My Completed Request";
 
 // Patient details
 const String tPatientName = "Patient's Name";
@@ -79,3 +83,5 @@ const String tReqUnit = "No. of Units Required";
 const String tBloodGroup = "";
 const String tSubmit = "Submit";
 const String tBloodForm = "Raise Blood Request";
+const String tBlood = "Blood Request Status";
+const String tCloseRequest = "Close Request";

@@ -13,10 +13,10 @@ class UserRepository extends GetxController {
         .collection("Users")
         .add(user.toJson())
         .whenComplete(
-          () => Get.snackbar("Success", "Your Account has created",
+          () => Get.snackbar("Alert", "Please Enter Your OTP",
               snackPosition: SnackPosition.BOTTOM,
-              backgroundColor: Colors.green.withOpacity(0.1),
-              colorText: Colors.green),
+              backgroundColor: Colors.redAccent.withOpacity(0.1),
+              colorText: Colors.red),
         )
         .catchError((error, stackTrace) {
       Get.snackbar("Error", "Something went Wrong. Please Try Again",
