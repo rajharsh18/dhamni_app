@@ -54,9 +54,7 @@ class MyCompletedRequests extends StatelessWidget {
                                       elevation: 5,
                                       child: ListTile(
                                         iconColor: Colors.blue,
-                                        tileColor:
-                                            Color.fromRGBO(33, 150, 243, 1)
-                                                .withOpacity(0.1),
+                                        tileColor: Colors.blue.withOpacity(0.1),
                                         leading: Container(
                                           width: 40,
                                           height: 40,
@@ -85,6 +83,9 @@ class MyCompletedRequests extends StatelessWidget {
                                         ),
                                       ),
                                     ),
+                                    SizedBox(
+                                      height: 10,
+                                    )
                                   ],
                                 );
                               },

@@ -71,7 +71,9 @@ class MyActiveRequests extends StatelessWidget {
                                           child: Icon(LineAwesomeIcons.user_1),
                                         ),
                                         title: Text(
-                                            "Patient's Name: ${snapshot.data![index].fullName}"),
+                                          "Patient's Name: ${snapshot.data![index].fullName}",
+                                          style: TextStyle(fontSize: 22),
+                                        ),
                                         subtitle: Column(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
@@ -119,12 +121,14 @@ class MyActiveRequests extends StatelessWidget {
                                         child: const Text(tCloseRequest),
                                         style: ElevatedButton.styleFrom(
                                           side: BorderSide.none,
+                                          backgroundColor: Colors.red,
+                                          foregroundColor: Colors.white,
                                           shape: StadiumBorder(),
                                         ),
                                       ),
                                     ),
                                     SizedBox(
-                                      height: 50,
+                                      height: 25,
                                     )
                                   ],
                                 );

@@ -57,6 +57,7 @@ class RequestStatus extends StatelessWidget {
                             decoration: const InputDecoration(
                                 label: Text(tFullName),
                                 prefixIcon: Icon(Icons.person_outline_rounded)),
+                            style: TextStyle(fontSize: 20),
                           ),
                           const SizedBox(height: tFormHeight - 20),
                           TextFormField(
@@ -67,6 +68,7 @@ class RequestStatus extends StatelessWidget {
                             decoration: const InputDecoration(
                                 label: Text(tBloodGroup),
                                 prefixIcon: Icon(Icons.email_outlined)),
+                            style: TextStyle(fontSize: 20),
                           ),
                           const SizedBox(height: tFormHeight - 20),
                           TextFormField(
@@ -77,6 +79,7 @@ class RequestStatus extends StatelessWidget {
                             decoration: const InputDecoration(
                                 label: Text(tReqUnit),
                                 prefixIcon: Icon(Icons.numbers)),
+                            style: TextStyle(fontSize: 20),
                           ),
                           const SizedBox(height: tFormHeight - 20),
                           TextFormField(
@@ -87,6 +90,7 @@ class RequestStatus extends StatelessWidget {
                             decoration: const InputDecoration(
                                 label: Text(tPhoneNo),
                                 prefixIcon: Icon(Icons.numbers_outlined)),
+                            style: TextStyle(fontSize: 20),
                           ),
                           const SizedBox(height: tFormHeight - 20),
                           TextFormField(
@@ -97,6 +101,7 @@ class RequestStatus extends StatelessWidget {
                             decoration: const InputDecoration(
                                 label: Text(tPinCode),
                                 prefixIcon: Icon(Icons.numbers_outlined)),
+                            style: TextStyle(fontSize: 20),
                           ),
                           const SizedBox(height: tFormHeight - 20),
                           SizedBox(
@@ -114,6 +119,8 @@ class RequestStatus extends StatelessWidget {
                               child: const Text("Request Fullfilled"),
                               style: ElevatedButton.styleFrom(
                                 side: BorderSide.none,
+                                backgroundColor: Colors.red,
+                                foregroundColor: Colors.white,
                                 shape: StadiumBorder(),
                               ),
                             ),

@@ -50,30 +50,41 @@ class AllRequestPincode extends StatelessWidget {
                               itemBuilder: (c, index) {
                                 return Column(
                                   children: [
-                                    ListTile(
-                                      iconColor: Colors.blue,
-                                      tileColor: Colors.blue.withOpacity(0.1),
-                                      leading:
-                                          const Icon(LineAwesomeIcons.user_1),
-                                      title: Text(
-                                          "Patient's Name: ${snapshot.data![index].fullName}"),
-                                      subtitle: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                              "Required Blood Group: ${snapshot.data![index].reqBlood}"),
-                                          Text(
-                                              "No. of unit required: ${snapshot.data![index].noUnit}"),
-                                          Text(
-                                              "Phone Number: ${snapshot.data![index].phoneNo}"),
-                                          Text(
-                                              "PinCode: ${snapshot.data![index].pinCode}"),
-                                        ],
+                                    Card(
+                                      elevation: 5,
+                                      child: ListTile(
+                                        iconColor: Colors.blue,
+                                        tileColor: Colors.blue.withOpacity(0.1),
+                                        leading: Container(
+                                          width: 40,
+                                          height: 40,
+                                          decoration: BoxDecoration(
+                                            borderRadius:
+                                                BorderRadius.circular(100),
+                                            color: Colors.blue.withOpacity(0.1),
+                                          ),
+                                          child: Icon(LineAwesomeIcons.user_1),
+                                        ),
+                                        title: Text(
+                                            "Patient's Name: ${snapshot.data![index].fullName}"),
+                                        subtitle: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                                "Required Blood Group: ${snapshot.data![index].reqBlood}"),
+                                            Text(
+                                                "No. of unit required: ${snapshot.data![index].noUnit}"),
+                                            Text(
+                                                "Phone Number: ${snapshot.data![index].phoneNo}"),
+                                            Text(
+                                                "PinCode: ${snapshot.data![index].pinCode}"),
+                                          ],
+                                        ),
                                       ),
                                     ),
                                     SizedBox(
-                                      height: 15,
+                                      height: 10,
                                     )
                                   ],
                                 );
