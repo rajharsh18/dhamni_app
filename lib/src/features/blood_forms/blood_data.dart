@@ -10,7 +10,7 @@ class BloodModel {
   final String college;
   final String status;
   final String email;
-  final String dateTime;
+  final Timestamp dateTime;
   final String date;
   final String time;
 

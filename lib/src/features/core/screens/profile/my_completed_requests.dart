@@ -69,7 +69,7 @@ class MyCompletedRequests extends StatelessWidget {
                                             "Patient's Name: ${snapshot.data![index].fullName}"),
                                         subtitle: Column(
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                              CrossAxisAlignment.stretch,
                                           children: [
                                             Text(
                                                 "Required Blood Group: ${snapshot.data![index].reqBlood}"),
@@ -79,6 +79,11 @@ class MyCompletedRequests extends StatelessWidget {
                                                 "Phone Number: ${snapshot.data![index].phoneNo}"),
                                             Text(
                                                 "PinCode: ${snapshot.data![index].pinCode}"),
+                                            // Text(
+                                            //   "${snapshot.data![index].date}, ${snapshot.data![index].time}",
+                                            //   style: TextStyle(fontSize: 10),
+                                            //   textAlign: TextAlign.end,
+                                            // )
                                           ],
                                         ),
                                       ),

@@ -180,6 +180,7 @@ class Blood_request extends StatelessWidget {
                                       colorText: Colors.red);
                                 } else if (_formKey.currentState!.validate()) {
                                   DateTime now = DateTime.now();
+                                  Timestamp dateTime = Timestamp.now();
                                   String currentDate =
                                       DateFormat('dd MMMM yyyy').format(now);
                                   String currentTime =
@@ -193,7 +194,7 @@ class Blood_request extends StatelessWidget {
                                     college: college,
                                     status: status,
                                     email: email,
-                                    dateTime: now.toString().trim(),
+                                    dateTime: dateTime,
                                     date: currentDate,
                                     time: currentTime,
                                   );

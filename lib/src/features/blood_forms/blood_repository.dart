@@ -32,6 +32,7 @@ class BloodRepository extends GetxController {
     final snapshot = await _db
         .collection("Blood_requests")
         .where("Status", isEqualTo: "No")
+        .orderBy('DateTime', descending: true)
         .get();
     final bloodData =
         snapshot.docs.map((e) => BloodModel.fromSnapshot(e)).toList();
@@ -43,6 +44,7 @@ class BloodRepository extends GetxController {
         .collection("Blood_requests")
         .where("College", isEqualTo: college)
         .where("Status", isEqualTo: "No")
+        .orderBy('DateTime', descending: true)
         .get();
     final bloodData =
         snapshot.docs.map((e) => BloodModel.fromSnapshot(e)).toList();
@@ -54,6 +56,7 @@ class BloodRepository extends GetxController {
         .collection("Blood_requests")
         .where("PinCode", isEqualTo: pincode)
         .where("Status", isEqualTo: "No")
+        .orderBy('DateTime', descending: true)
         .get();
     final bloodData =
         snapshot.docs.map((e) => BloodModel.fromSnapshot(e)).toList();
@@ -63,9 +66,9 @@ class BloodRepository extends GetxController {
   Future<List<BloodModel>> bloodDetailsUserActive(String email) async {
     final snapshot = await _db
         .collection("Blood_requests")
-        // .orderBy("DateTime")
         .where("Email", isEqualTo: email)
         .where("Status", isEqualTo: "No")
+        .orderBy('DateTime', descending: true)
         .get();
     final bloodData =
         snapshot.docs.map((e) => BloodModel.fromSnapshot(e)).toList();
@@ -77,6 +80,7 @@ class BloodRepository extends GetxController {
         .collection("Blood_requests")
         .where("Email", isEqualTo: email)
         .where("Status", isEqualTo: "Yes")
+        .orderBy('DateTime', descending: true)
         .get();
     final bloodData =
         snapshot.docs.map((e) => BloodModel.fromSnapshot(e)).toList();
