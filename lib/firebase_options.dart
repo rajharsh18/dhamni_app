@@ -44,42 +44,41 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDxIsUleSzV3P8GZBwjX1VfE8VwksHFVY0',
-    appId: '1:530128623193:web:99477d58f29b3fe5ea0348',
-    messagingSenderId: '530128623193',
-    projectId: 'dhamni-818db',
-    authDomain: 'dhamni-818db.firebaseapp.com',
-    storageBucket: 'dhamni-818db.appspot.com',
-    measurementId: 'G-415PC91NE5',
+    apiKey: 'AIzaSyCcOpdWSExM4rwukouH6zlW6YkyFQwwy5w',
+    appId: '1:337462199984:web:90702024cc1541013e5d75',
+    messagingSenderId: '337462199984',
+    projectId: 'dhamniapp',
+    authDomain: 'dhamniapp.firebaseapp.com',
+    storageBucket: 'dhamniapp.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyACA1nK9zw3oJe8OTXUwEiTywfidBHb5xI',
-    appId: '1:530128623193:android:6a3b22545207086aea0348',
-    messagingSenderId: '530128623193',
-    projectId: 'dhamni-818db',
-    storageBucket: 'dhamni-818db.appspot.com',
+    apiKey: 'AIzaSyD01hWhLo1bZ72RRQexOA8ZCYnY6byUJ0Y',
+    appId: '1:337462199984:android:08b67b1cac698ffb3e5d75',
+    messagingSenderId: '337462199984',
+    projectId: 'dhamniapp',
+    storageBucket: 'dhamniapp.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyA7JJU2xDdWMh1LubLKaSreL8GOUkoenfA',
-    appId: '1:530128623193:ios:209de64eecb18ff3ea0348',
-    messagingSenderId: '530128623193',
-    projectId: 'dhamni-818db',
-    storageBucket: 'dhamni-818db.appspot.com',
-    androidClientId: '530128623193-bj1q7be3ep4gr1qr4mkds3eecq81g2qm.apps.googleusercontent.com',
-    iosClientId: '530128623193-7oe2119itihaqhdtmd0n1n7gtodm9oh6.apps.googleusercontent.com',
+    apiKey: 'AIzaSyCwe2CMvv1Oi6spYqWqmDRzVDrTMbY7ymE',
+    appId: '1:337462199984:ios:5ac50746cdb253a13e5d75',
+    messagingSenderId: '337462199984',
+    projectId: 'dhamniapp',
+    storageBucket: 'dhamniapp.appspot.com',
+    androidClientId: '337462199984-l1eig1eeghlue8hic1lalp5lf1hvv6cp.apps.googleusercontent.com',
+    iosClientId: '337462199984-ri7gccr4o1jikvjohl6v1vlfp9sc02sl.apps.googleusercontent.com',
     iosBundleId: 'com.example.dhamni',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyA7JJU2xDdWMh1LubLKaSreL8GOUkoenfA',
-    appId: '1:530128623193:ios:209de64eecb18ff3ea0348',
-    messagingSenderId: '530128623193',
-    projectId: 'dhamni-818db',
-    storageBucket: 'dhamni-818db.appspot.com',
-    androidClientId: '530128623193-bj1q7be3ep4gr1qr4mkds3eecq81g2qm.apps.googleusercontent.com',
-    iosClientId: '530128623193-7oe2119itihaqhdtmd0n1n7gtodm9oh6.apps.googleusercontent.com',
+    apiKey: 'AIzaSyCwe2CMvv1Oi6spYqWqmDRzVDrTMbY7ymE',
+    appId: '1:337462199984:ios:5ac50746cdb253a13e5d75',
+    messagingSenderId: '337462199984',
+    projectId: 'dhamniapp',
+    storageBucket: 'dhamniapp.appspot.com',
+    androidClientId: '337462199984-l1eig1eeghlue8hic1lalp5lf1hvv6cp.apps.googleusercontent.com',
+    iosClientId: '337462199984-ri7gccr4o1jikvjohl6v1vlfp9sc02sl.apps.googleusercontent.com',
     iosBundleId: 'com.example.dhamni',
   );
 }
