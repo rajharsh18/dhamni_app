@@ -28,6 +28,7 @@ class AllRequestPincode extends StatelessWidget {
           ),
         ),
         body: SingleChildScrollView(
+          physics: ScrollPhysics(),
           child: Container(
             padding: const EdgeInsets.all(tDefaultSize),
             child: FutureBuilder(
@@ -43,6 +44,7 @@ class AllRequestPincode extends StatelessWidget {
                         if (snapshot.connectionState == ConnectionState.done) {
                           if (snapshot.hasData) {
                             return ListView.builder(
+                              physics: NeverScrollableScrollPhysics(),
                               shrinkWrap: true,
                               itemCount: snapshot.data!.length,
                               itemBuilder: (c, index) {

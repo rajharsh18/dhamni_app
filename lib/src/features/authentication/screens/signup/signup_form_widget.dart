@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dhamni/src/common_widgets/phone_input_formatter.dart';
 import 'package:dhamni/src/constants/sizes.dart';
 import 'package:dhamni/src/constants/text_strings.dart';
 import 'package:dhamni/src/features/authentication/controllers/signup_controllers.dart';
@@ -11,12 +13,14 @@ class SignUpForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final CollectionReference buttonPressCollection =
+        FirebaseFirestore.instance.collection('Users');
+    final PhoneInputFormatter _phoneFormatter = PhoneInputFormatter();
     final controller_pro = Get.put(ProfileController());
     final controller = Get.put(SignUpController());
     final _formKey = GlobalKey<FormState>();
     const password = "password";
     const collegeName = "Select College Name";
-    const pinCode = "";
     var email_reg = <String>[];
     var phoneNo_reg = <String>[];
 
@@ -85,6 +89,8 @@ class SignUpForm extends StatelessWidget {
                           return null;
                         },
                         controller: controller.phoneNo,
+                        keyboardType: TextInputType.phone,
+                        inputFormatters: [_phoneFormatter],
                         decoration: InputDecoration(
                           prefixIcon: Icon(Icons.numbers),
                           labelText: tPhoneNo,
@@ -99,13 +105,15 @@ class SignUpForm extends StatelessWidget {
                         child: ElevatedButton(
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
+                              DateTime now = DateTime.now();
                               final user = UserModel(
                                 email: controller.email.text.trim(),
                                 password: password,
                                 phoneNo: controller.phoneNo.text.trim(),
                                 fullName: controller.fullName.text.trim(),
                                 collegeName: collegeName,
-                                pinCode: pinCode,
+                                pinCode: "",
+                                dateTime: now.toString().trim(),
                               );
                               SignUpController.instance.createUser(user);
                             }

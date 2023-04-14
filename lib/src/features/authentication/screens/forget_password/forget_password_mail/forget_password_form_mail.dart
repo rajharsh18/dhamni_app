@@ -28,6 +28,7 @@ class _ForgetPasswordMailFormState extends State<ForgetPasswordMailForm> {
                   labelText: tEmail,
                   hintText: tEmail,
                   border: OutlineInputBorder()),
+              style: TextStyle(fontSize: 20),
             ),
             const SizedBox(
               height: tFormHeight - 20,

@@ -1,3 +1,4 @@
+import 'package:dhamni/src/common_widgets/phone_input_formatter.dart';
 import 'package:dhamni/src/constants/colors.dart';
 import 'package:dhamni/src/constants/image_strings.dart';
 import 'package:dhamni/src/constants/sizes.dart';
@@ -127,6 +128,7 @@ class UpdateProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(ProfileController());
+    final PhoneInputFormatter _phoneFormatter = PhoneInputFormatter();
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -218,6 +220,8 @@ class UpdateProfileScreen extends StatelessWidget {
                           TextFormField(
                             readOnly: true,
                             initialValue: user.phoneNo,
+                            keyboardType: TextInputType.number,
+                            inputFormatters: [_phoneFormatter],
                             minLines: null,
                             maxLines: null,
                             decoration: const InputDecoration(
@@ -251,6 +255,7 @@ class UpdateProfileScreen extends StatelessWidget {
                           ),
                           TextFormField(
                             controller: pinCode,
+                            keyboardType: TextInputType.number,
                             minLines: null,
                             maxLines: null,
                             decoration: const InputDecoration(
@@ -270,6 +275,7 @@ class UpdateProfileScreen extends StatelessWidget {
                                   fullName: fullName.text.trim(),
                                   collegeName: college_id,
                                   pinCode: pinCode.text.trim(),
+                                  dateTime: user.dateTime,
                                 );
 
                                 await controller.UpdateRecord(

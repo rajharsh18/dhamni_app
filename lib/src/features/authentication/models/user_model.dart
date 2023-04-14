@@ -8,6 +8,7 @@ class UserModel {
   final String password;
   final String collegeName;
   final String pinCode;
+  final String dateTime;
 
   const UserModel({
     this.id,
@@ -17,6 +18,7 @@ class UserModel {
     required this.fullName,
     required this.collegeName,
     required this.pinCode,
+    required this.dateTime,
   });
 
   toJson() {
@@ -27,6 +29,7 @@ class UserModel {
       "Password": password,
       "CollegeName": collegeName,
       "PinCode": pinCode,
+      "DateTime": dateTime,
     };
   }
 
@@ -41,6 +44,7 @@ class UserModel {
       fullName: data["FullName"],
       collegeName: data["CollegeName"],
       pinCode: data["PinCode"],
+      dateTime: data["DateTime"],
     );
   }
 }

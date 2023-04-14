@@ -7,9 +7,10 @@ class BloodModel {
   final String noUnit;
   final String phoneNo;
   final String pinCode;
-  final String College;
-  final String Status;
+  final String college;
+  final String status;
   final String email;
+  final String dateTime;
 
   const BloodModel({
     this.id,
@@ -18,9 +19,10 @@ class BloodModel {
     required this.noUnit,
     required this.phoneNo,
     required this.pinCode,
-    required this.College,
-    required this.Status,
+    required this.college,
+    required this.status,
     required this.email,
+    required this.dateTime,
   });
 
   toJson() {
@@ -30,9 +32,10 @@ class BloodModel {
       "NOofUnit": noUnit,
       "PMobNum": phoneNo,
       "PinCode": pinCode,
-      "College": College,
-      "Status": Status,
+      "College": college,
+      "Status": status,
       "Email": email,
+      "DateTime": dateTime,
     };
   }
 
@@ -46,9 +49,10 @@ class BloodModel {
       noUnit: data["NOofUnit"],
       phoneNo: data["PMobNum"],
       pinCode: data["PinCode"],
-      College: data["College"],
-      Status: data["Status"],
+      college: data["College"],
+      status: data["Status"],
       email: data["Email"],
+      dateTime: data["DateTime"],
     );
   }
 }

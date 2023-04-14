@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dhamni/src/common_widgets/phone_input_formatter.dart';
 import 'package:dhamni/src/constants/sizes.dart';
 import 'package:dhamni/src/constants/text_strings.dart';
 import 'package:dhamni/src/features/authentication/models/user_model.dart';
@@ -14,14 +16,19 @@ class Blood_request extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final CollectionReference collectionRef =
+        FirebaseFirestore.instance.collection('Blood_requests');
+    final PhoneInputFormatter _phoneFormatter = PhoneInputFormatter();
     final controller = Get.put(BloodController());
     final controller_pro = Get.put(ProfileController());
     final _formKey = GlobalKey<FormState>();
     late String blood_id = "Select Blood Group";
-    var College = "";
-    var Status = "No";
+    var college = "";
+    var status = "No";
     var email = "";
     var pin = "";
+    var currentDate = '';
+    var currentTime = '';
     final _blood = [
       "Select Blood Group",
       "A+",
@@ -55,7 +62,7 @@ class Blood_request extends StatelessWidget {
                 if (snapshot.connectionState == ConnectionState.done) {
                   if (snapshot.hasData) {
                     UserModel user = snapshot.data as UserModel;
-                    College = user.collegeName;
+                    college = user.collegeName;
                     email = user.email;
                     pin = user.pinCode;
                     return Form(
@@ -71,10 +78,13 @@ class Blood_request extends StatelessWidget {
                               return null;
                             },
                             controller: controller.fullName,
-                            decoration: const InputDecoration(
-                              label: Text(tPatientName),
+                            decoration: InputDecoration(
                               prefixIcon: Icon(Icons.person_outline_rounded),
+                              labelText: tPatientName,
+                              hintText: tPatientName,
+                              // border: OutlineInputBorder(),
                             ),
+                            style: TextStyle(fontSize: 20),
                           ),
                           DropdownButtonFormField(
                             validator: (value) {
@@ -86,9 +96,13 @@ class Blood_request extends StatelessWidget {
                             value: blood_id,
                             itemHeight: null,
                             isExpanded: true,
-                            decoration: const InputDecoration(
-                                label: Text(tBloodGroup),
-                                prefixIcon: Icon(Icons.home_rounded)),
+                            decoration: InputDecoration(
+                              prefixIcon: Icon(Icons.home_rounded),
+                              labelText: tBloodGroup,
+                              hintText: tBloodGroup,
+                              // border: OutlineInputBorder(),
+                            ),
+                            style: TextStyle(fontSize: 20, color: Colors.black),
                             items: _blood
                                 .map((e) => DropdownMenuItem(
                                       child: Text(e),
@@ -107,10 +121,14 @@ class Blood_request extends StatelessWidget {
                               return null;
                             },
                             controller: controller.noUnit,
-                            decoration: const InputDecoration(
-                              label: Text(tReqUnit),
+                            keyboardType: TextInputType.number,
+                            decoration: InputDecoration(
                               prefixIcon: Icon(Icons.numbers),
+                              labelText: tReqUnit,
+                              hintText: tReqUnit,
+                              // border: OutlineInputBorder(),
                             ),
+                            style: TextStyle(fontSize: 20),
                           ),
                           TextFormField(
                             validator: (value) {
@@ -120,10 +138,15 @@ class Blood_request extends StatelessWidget {
                               return null;
                             },
                             controller: controller.phoneNo,
-                            decoration: const InputDecoration(
-                              label: Text(tPhoneNo),
+                            keyboardType: TextInputType.phone,
+                            inputFormatters: [_phoneFormatter],
+                            decoration: InputDecoration(
                               prefixIcon: Icon(Icons.numbers),
+                              labelText: tPhoneNo,
+                              hintText: tPhoneNo,
+                              // border: OutlineInputBorder(),
                             ),
+                            style: TextStyle(fontSize: 20),
                           ),
                           TextFormField(
                             validator: (value) {
@@ -133,16 +156,20 @@ class Blood_request extends StatelessWidget {
                               return null;
                             },
                             controller: controller.pinCode,
-                            decoration: const InputDecoration(
-                              label: Text(tPinCode),
+                            keyboardType: TextInputType.number,
+                            decoration: InputDecoration(
                               prefixIcon: Icon(Icons.numbers_outlined),
+                              labelText: tPinCode,
+                              hintText: tPinCode,
+                              // border: OutlineInputBorder(),
                             ),
+                            style: TextStyle(fontSize: 20),
                           ),
                           SizedBox(
                             width: double.infinity,
                             child: ElevatedButton(
                               onPressed: () {
-                                if (College == "Select College Name" ||
+                                if (college == "Select College Name" ||
                                     pin == "") {
                                   Get.snackbar("Error",
                                       "Please Update your College and PinCode in the Profile Menu.",
@@ -151,15 +178,17 @@ class Blood_request extends StatelessWidget {
                                           Colors.redAccent.withOpacity(0.1),
                                       colorText: Colors.red);
                                 } else if (_formKey.currentState!.validate()) {
+                                  DateTime now = DateTime.now();
                                   final reqblood = BloodModel(
                                     fullName: controller.fullName.text.trim(),
                                     reqBlood: blood_id,
                                     noUnit: controller.noUnit.text.trim(),
                                     phoneNo: controller.phoneNo.text.trim(),
                                     pinCode: controller.pinCode.text.trim(),
-                                    College: College,
-                                    Status: Status,
+                                    college: college,
+                                    status: status,
                                     email: email,
+                                    dateTime: now.toString().trim(),
                                   );
                                   BloodController.instance.addRequest(reqblood);
                                   Get.offAll(const Dashboard());

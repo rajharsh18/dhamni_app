@@ -6,6 +6,7 @@ import 'package:dhamni/src/features/blood_forms/blood_request_controller.dart';
 import 'package:dhamni/src/features/core/controllers/profile_controller.dart';
 import 'package:dhamni/src/features/core/screens/profile/request_status.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
@@ -30,6 +31,7 @@ class MyActiveRequests extends StatelessWidget {
           ),
         ),
         body: SingleChildScrollView(
+          physics: ScrollPhysics(),
           child: Container(
             padding: const EdgeInsets.all(tDefaultSize),
             child: FutureBuilder(
@@ -45,6 +47,7 @@ class MyActiveRequests extends StatelessWidget {
                         if (snapshot.connectionState == ConnectionState.done) {
                           if (snapshot.hasData) {
                             return ListView.builder(
+                              physics: NeverScrollableScrollPhysics(),
                               shrinkWrap: true,
                               itemCount: snapshot.data!.length,
                               itemBuilder: (c, index) {
@@ -101,11 +104,13 @@ class MyActiveRequests extends StatelessWidget {
                                                 snapshot.data![index].phoneNo,
                                             pinCode:
                                                 snapshot.data![index].pinCode,
-                                            College:
-                                                snapshot.data![index].College,
-                                            Status:
-                                                snapshot.data![index].Status,
+                                            college:
+                                                snapshot.data![index].college,
+                                            status:
+                                                snapshot.data![index].status,
                                             email: snapshot.data![index].email,
+                                            dateTime:
+                                                snapshot.data![index].dateTime,
                                           );
                                           Get.to(() => RequestStatus(
                                                 bloodData: bloodData,
@@ -119,7 +124,7 @@ class MyActiveRequests extends StatelessWidget {
                                       ),
                                     ),
                                     SizedBox(
-                                      height: 30,
+                                      height: 50,
                                     )
                                   ],
                                 );
