@@ -7,6 +7,7 @@ import 'package:dhamni/src/features/core/controllers/profile_controller.dart';
 import 'package:dhamni/src/features/core/screens/profile/request_status.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:intl/intl.dart';
 import 'package:get/get.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
@@ -76,7 +77,7 @@ class MyActiveRequests extends StatelessWidget {
                                         ),
                                         subtitle: Column(
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                              CrossAxisAlignment.stretch,
                                           children: [
                                             Text(
                                                 "Required Blood Group: ${snapshot.data![index].reqBlood}"),
@@ -86,6 +87,11 @@ class MyActiveRequests extends StatelessWidget {
                                                 "Phone Number: ${snapshot.data![index].phoneNo}"),
                                             Text(
                                                 "PinCode: ${snapshot.data![index].pinCode}"),
+                                            Text(
+                                              "${snapshot.data![index].date}, ${snapshot.data![index].time}",
+                                              style: TextStyle(fontSize: 10),
+                                              textAlign: TextAlign.end,
+                                            ),
                                           ],
                                         ),
                                       ),
@@ -113,6 +119,8 @@ class MyActiveRequests extends StatelessWidget {
                                             email: snapshot.data![index].email,
                                             dateTime:
                                                 snapshot.data![index].dateTime,
+                                            date: snapshot.data![index].date,
+                                            time: snapshot.data![index].time,
                                           );
                                           Get.to(() => RequestStatus(
                                                 bloodData: bloodData,

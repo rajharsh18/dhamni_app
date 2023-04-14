@@ -11,6 +11,8 @@ class BloodModel {
   final String status;
   final String email;
   final String dateTime;
+  final String date;
+  final String time;
 
   const BloodModel({
     this.id,
@@ -23,6 +25,8 @@ class BloodModel {
     required this.status,
     required this.email,
     required this.dateTime,
+    required this.date,
+    required this.time,
   });
 
   toJson() {
@@ -36,6 +40,8 @@ class BloodModel {
       "Status": status,
       "Email": email,
       "DateTime": dateTime,
+      "Date": date,
+      "Time": time,
     };
   }
 
@@ -53,6 +59,8 @@ class BloodModel {
       status: data["Status"],
       email: data["Email"],
       dateTime: data["DateTime"],
+      date: data["Date"],
+      time: data["Time"],
     );
   }
 }

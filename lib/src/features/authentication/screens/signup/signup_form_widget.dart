@@ -7,6 +7,7 @@ import 'package:dhamni/src/features/authentication/models/user_model.dart';
 import 'package:dhamni/src/features/core/controllers/profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 class SignUpForm extends StatelessWidget {
   const SignUpForm({Key? key}) : super(key: key);
@@ -23,6 +24,8 @@ class SignUpForm extends StatelessWidget {
     const collegeName = "Select College Name";
     var email_reg = <String>[];
     var phoneNo_reg = <String>[];
+    var currentDate = '';
+    var currentTime = '';
 
     return Container(
       padding: const EdgeInsets.symmetric(vertical: tFormHeight - 10),
@@ -106,6 +109,10 @@ class SignUpForm extends StatelessWidget {
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
                               DateTime now = DateTime.now();
+                              String currentDate =
+                                  DateFormat('dd MMMM yyyy').format(now);
+                              String currentTime =
+                                  DateFormat('HH:mm:ss').format(now);
                               final user = UserModel(
                                 email: controller.email.text.trim(),
                                 password: password,
@@ -114,6 +121,8 @@ class SignUpForm extends StatelessWidget {
                                 collegeName: collegeName,
                                 pinCode: "",
                                 dateTime: now.toString().trim(),
+                                date: currentDate,
+                                time: currentTime,
                               );
                               SignUpController.instance.createUser(user);
                             }

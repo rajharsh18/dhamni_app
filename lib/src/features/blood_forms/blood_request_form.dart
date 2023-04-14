@@ -10,6 +10,7 @@ import 'package:dhamni/src/features/core/screens/dashboard/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
+import 'package:intl/intl.dart';
 
 class Blood_request extends StatelessWidget {
   Blood_request({Key? key}) : super(key: key);
@@ -179,6 +180,10 @@ class Blood_request extends StatelessWidget {
                                       colorText: Colors.red);
                                 } else if (_formKey.currentState!.validate()) {
                                   DateTime now = DateTime.now();
+                                  String currentDate =
+                                      DateFormat('dd MMMM yyyy').format(now);
+                                  String currentTime =
+                                      DateFormat('HH:mm:ss').format(now);
                                   final reqblood = BloodModel(
                                     fullName: controller.fullName.text.trim(),
                                     reqBlood: blood_id,
@@ -189,6 +194,8 @@ class Blood_request extends StatelessWidget {
                                     status: status,
                                     email: email,
                                     dateTime: now.toString().trim(),
+                                    date: currentDate,
+                                    time: currentTime,
                                   );
                                   BloodController.instance.addRequest(reqblood);
                                   Get.offAll(const Dashboard());

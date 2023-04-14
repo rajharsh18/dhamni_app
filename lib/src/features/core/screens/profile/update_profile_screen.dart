@@ -276,6 +276,8 @@ class UpdateProfileScreen extends StatelessWidget {
                                   collegeName: college_id,
                                   pinCode: pinCode.text.trim(),
                                   dateTime: user.dateTime,
+                                  date: user.date,
+                                  time: user.time,
                                 );
 
                                 await controller.UpdateRecord(
@@ -298,6 +300,21 @@ class UpdateProfileScreen extends StatelessWidget {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
+                              Text.rich(
+                                TextSpan(
+                                  text: tJoined,
+                                  style: TextStyle(fontSize: 12),
+                                  children: [
+                                    TextSpan(
+                                      text: user.date,
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
                               ElevatedButton(
                                   onPressed: () {
                                     ForgetPasswordScreen
