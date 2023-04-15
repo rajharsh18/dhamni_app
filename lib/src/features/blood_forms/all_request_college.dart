@@ -89,7 +89,26 @@ class AllRequestCollege extends StatelessWidget {
                                       ),
                                     ),
                                     SizedBox(
-                                      height: 10,
+                                      width: double.infinity,
+                                      child: ElevatedButton(
+                                        onPressed: () {
+                                          // Get.to(() => ChatScreen(
+                                          //       senderId: user.email,
+                                          //       receiverId:
+                                          //           snapshot.data![index].email,
+                                          //     ));
+                                        },
+                                        child: const Text(tRespond),
+                                        style: ElevatedButton.styleFrom(
+                                          side: BorderSide.none,
+                                          backgroundColor: Colors.blue,
+                                          foregroundColor: Colors.white,
+                                          shape: StadiumBorder(),
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 25,
                                     )
                                   ],
                                 );

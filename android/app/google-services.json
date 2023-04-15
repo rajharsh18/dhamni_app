@@ -37,6 +37,13 @@
             {
               "client_id": "337462199984-hvakbsn1ial3eao207p4v71chiq31hne.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "337462199984-ri7gccr4o1jikvjohl6v1vlfp9sc02sl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.dhamni"
+              }
             }
           ]
         }

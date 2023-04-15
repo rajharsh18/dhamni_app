@@ -85,3 +85,4 @@ const String tSubmit = "Submit";
 const String tBloodForm = "Raise Blood Request";
 const String tBlood = "Blood Request Status";
 const String tCloseRequest = "Close Request";
+const String tRespond = "Respond";

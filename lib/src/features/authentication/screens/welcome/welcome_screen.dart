@@ -5,7 +5,6 @@ import 'package:dhamni/src/constants/image_strings.dart';
 import 'package:dhamni/src/features/authentication/screens/login/login_screen.dart';
 import 'package:dhamni/src/features/authentication/screens/signup/signup_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/material/outlined_button.dart';
 import 'package:get/get.dart';
 
 class WelcomeScreen extends StatelessWidget {

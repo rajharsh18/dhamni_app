@@ -10,16 +10,42 @@ import 'package:google_fonts/google_fonts.dart';
 class OTPScreen extends StatelessWidget {
   const OTPScreen({
     super.key,
-    this.user,
+    // this.user,
+    required this.email,
+    required this.password,
+    required this.phoneNo,
+    required this.fullName,
+    required this.collegeName,
+    required this.pinCode,
+    required this.dateTime,
+    required this.date,
+    required this.time,
   });
 
-  final UserModel? user;
+  // final UserModel? user;
+  final String fullName;
+  final String email;
+  final String phoneNo;
+  final String password;
+  final String collegeName;
+  final String pinCode;
+  final String dateTime;
+  final String date;
+  final String time;
 
   @override
   Widget build(BuildContext context) {
     var otpController = Get.put(OTPController());
-    var email = Get.put(user?.email);
-    var password = Get.put(user?.password);
+    UserModel user1 = UserModel(
+        email: email,
+        password: password,
+        phoneNo: phoneNo,
+        fullName: fullName,
+        collegeName: collegeName,
+        pinCode: pinCode,
+        dateTime: dateTime,
+        date: date,
+        time: time);
     var otp;
     return Scaffold(
       body: Container(
@@ -45,14 +71,15 @@ class OTPScreen extends StatelessWidget {
                 filled: true,
                 onSubmit: (code) {
                   otp = code;
-                  OTPController.instance.verifyOTP(otp, email!, password!);
+                  OTPController.instance.verifyOTP(otp, email, password, user1);
                 }),
             const SizedBox(height: 20.0),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
                   onPressed: () {
-                    OTPController.instance.verifyOTP(otp, email!, password!);
+                    OTPController.instance
+                        .verifyOTP(otp, email, password, user1);
                   },
                   child: const Text(tNext)),
             ),

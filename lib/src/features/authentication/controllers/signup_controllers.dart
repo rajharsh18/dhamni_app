@@ -25,11 +25,21 @@ class SignUpController extends GetxController {
   }
 
   Future<void> createUser(UserModel user) async {
-    await userRepo.createUser(user);
     phoneAuthentication(user.phoneNo);
+    Get.snackbar("Alert", "Please enter your OTP.",
+        snackPosition: SnackPosition.TOP,
+        backgroundColor: Colors.orangeAccent.withOpacity(0.1),
+        colorText: Colors.orange);
     Get.to(() => OTPScreen(
-          user: user,
-        ));
+        email: user.email,
+        password: user.password,
+        phoneNo: user.phoneNo,
+        fullName: user.fullName,
+        collegeName: user.collegeName,
+        pinCode: user.pinCode,
+        dateTime: user.dateTime,
+        date: user.date,
+        time: user.time));
   }
 
   void phoneAuthentication(String phoneNo) {
