@@ -49,6 +49,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '337462199984',
     projectId: 'dhamniapp',
     authDomain: 'dhamniapp.firebaseapp.com',
+    databaseURL: 'https://dhamniapp-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'dhamniapp.appspot.com',
   );
 
@@ -57,6 +58,7 @@ class DefaultFirebaseOptions {
     appId: '1:337462199984:android:08b67b1cac698ffb3e5d75',
     messagingSenderId: '337462199984',
     projectId: 'dhamniapp',
+    databaseURL: 'https://dhamniapp-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'dhamniapp.appspot.com',
   );
 
@@ -65,6 +67,7 @@ class DefaultFirebaseOptions {
     appId: '1:337462199984:ios:5ac50746cdb253a13e5d75',
     messagingSenderId: '337462199984',
     projectId: 'dhamniapp',
+    databaseURL: 'https://dhamniapp-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'dhamniapp.appspot.com',
     androidClientId: '337462199984-l1eig1eeghlue8hic1lalp5lf1hvv6cp.apps.googleusercontent.com',
     iosClientId: '337462199984-ri7gccr4o1jikvjohl6v1vlfp9sc02sl.apps.googleusercontent.com',
@@ -76,6 +79,7 @@ class DefaultFirebaseOptions {
     appId: '1:337462199984:ios:5ac50746cdb253a13e5d75',
     messagingSenderId: '337462199984',
     projectId: 'dhamniapp',
+    databaseURL: 'https://dhamniapp-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'dhamniapp.appspot.com',
     androidClientId: '337462199984-l1eig1eeghlue8hic1lalp5lf1hvv6cp.apps.googleusercontent.com',
     iosClientId: '337462199984-ri7gccr4o1jikvjohl6v1vlfp9sc02sl.apps.googleusercontent.com',

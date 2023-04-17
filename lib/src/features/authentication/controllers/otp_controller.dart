@@ -1,5 +1,6 @@
 import 'package:dhamni/src/features/authentication/controllers/signup_controllers.dart';
 import 'package:dhamni/src/features/authentication/models/user_model.dart';
+import 'package:dhamni/src/features/core/screens/dashboard/dashboard.dart';
 import 'package:dhamni/src/repository/authentication_repository/authentication_repository.dart';
 import 'package:dhamni/src/repository/user_repository/user_repository.dart';
 import 'package:flutter/material.dart';
@@ -17,11 +18,12 @@ class OTPController extends GetxController {
 
   final userRepo = Get.put(UserRepository());
 
-  void saveAuthenticationData(String email, String password) {
+  void saveAuthenticationData(String email, String password) async {
+    await SignUpController.instance.registerUser(email, password);
     Get.snackbar("Alert", "Please Reset your password using your Email-ID.",
         snackPosition: SnackPosition.TOP,
         backgroundColor: Colors.orangeAccent.withOpacity(0.1),
         colorText: Colors.orange);
-    SignUpController.instance.registerUser(email, password);
+    Get.offAll(() => const Dashboard());
   }
 }

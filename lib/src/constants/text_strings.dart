@@ -12,6 +12,7 @@ const String tFullName = "Full Name";
 const String tPinCode = "Pin Code";
 const String tForgetPassword = "Forget Password";
 const String tSignInWithGoogle = "Sign-In with Google";
+const String tWrong = "Incorrect Number? Click here to change.";
 
 // -- Welcome Screen Text
 const String tAppName = "Dhamni";

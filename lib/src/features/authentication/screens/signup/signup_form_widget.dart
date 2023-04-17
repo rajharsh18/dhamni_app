@@ -102,6 +102,24 @@ class SignUpForm extends StatelessWidget {
                         ),
                         style: TextStyle(fontSize: 20),
                       ),
+                      // const SizedBox(height: tFormHeight - 20),
+                      // TextFormField(
+                      //   validator: (value) {
+                      //     if (value == null || value.isEmpty) {
+                      //       return 'Please enter Password.';
+                      //     } else {
+                      //       return null;
+                      //     }
+                      //   },
+                      //   controller: controller.password,
+                      //   decoration: InputDecoration(
+                      //     prefixIcon: Icon(Icons.password_outlined),
+                      //     labelText: tPassword,
+                      //     hintText: tPassword,
+                      //     // border: OutlineInputBorder(),
+                      //   ),
+                      //   style: TextStyle(fontSize: 20),
+                      // ),
                       const SizedBox(height: tFormHeight - 20),
                       SizedBox(
                         width: double.infinity,
@@ -115,6 +133,7 @@ class SignUpForm extends StatelessWidget {
                                   DateFormat('HH:mm:ss').format(now);
                               final user = UserModel(
                                 email: controller.email.text.trim(),
+                                // password: controller.password.text.trim(),
                                 password: password,
                                 phoneNo: controller.phoneNo.text.trim(),
                                 fullName: controller.fullName.text.trim(),

@@ -35,6 +35,7 @@ class OTPScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
     var otpController = Get.put(OTPController());
     UserModel user1 = UserModel(
         email: email,
@@ -48,42 +49,55 @@ class OTPScreen extends StatelessWidget {
         time: time);
     var otp;
     return Scaffold(
-      body: Container(
-        padding: const EdgeInsets.all(tDefaultSize),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              tOtpTitle,
-              style: GoogleFonts.montserrat(
-                  fontWeight: FontWeight.bold, fontSize: 80.0),
+      body: SingleChildScrollView(
+        child: Container(
+          // height: height,
+          padding: const EdgeInsets.fromLTRB(tDefaultSize - 10,
+              tDefaultSize * 6, tDefaultSize - 10, tDefaultSize - 10),
+          child: SizedBox(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  tOtpTitle,
+                  style: GoogleFonts.montserrat(
+                      fontWeight: FontWeight.bold, fontSize: 80.0),
+                ),
+                Text(tOtpSubTitle.toUpperCase(),
+                    style: Theme.of(context).textTheme.headlineMedium),
+                const SizedBox(height: 40.0),
+                Text("$tOtpMessage $phoneNo", textAlign: TextAlign.center),
+                const SizedBox(height: 20.0),
+                OtpTextField(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    numberOfFields: 6,
+                    fillColor: Colors.black.withOpacity(0.1),
+                    filled: true,
+                    onSubmit: (code) {
+                      otp = code;
+                      OTPController.instance
+                          .verifyOTP(otp, email, password, user1);
+                    }),
+                const SizedBox(height: 20.0),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                      onPressed: () {
+                        OTPController.instance
+                            .verifyOTP(otp, email, password, user1);
+                      },
+                      child: const Text(tNext)),
+                ),
+                TextButton(
+                  onPressed: () => Get.back(),
+                  child: const Text.rich(TextSpan(
+                    text: tWrong,
+                  )),
+                ),
+              ],
             ),
-            Text(tOtpSubTitle.toUpperCase(),
-                style: Theme.of(context).textTheme.headlineMedium),
-            const SizedBox(height: 40.0),
-            const Text("$tOtpMessage dhamni.cic@gmail.com",
-                textAlign: TextAlign.center),
-            const SizedBox(height: 20.0),
-            OtpTextField(
-                mainAxisAlignment: MainAxisAlignment.center,
-                numberOfFields: 6,
-                fillColor: Colors.black.withOpacity(0.1),
-                filled: true,
-                onSubmit: (code) {
-                  otp = code;
-                  OTPController.instance.verifyOTP(otp, email, password, user1);
-                }),
-            const SizedBox(height: 20.0),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                  onPressed: () {
-                    OTPController.instance
-                        .verifyOTP(otp, email, password, user1);
-                  },
-                  child: const Text(tNext)),
-            ),
-          ],
+          ),
         ),
       ),
     );

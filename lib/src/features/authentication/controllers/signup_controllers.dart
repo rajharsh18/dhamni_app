@@ -11,12 +11,13 @@ class SignUpController extends GetxController {
   final email = TextEditingController();
   final fullName = TextEditingController();
   final phoneNo = TextEditingController();
+  // final password = TextEditingController();
 
   final userRepo = Get.put(UserRepository());
 
-  void registerUser(String email, String password) {
-    String? error = AuthenticationRepository.instance
-        .createUserWithEmailAndPassword(email, password) as String?;
+  Future<void> registerUser(String email, String password) async {
+    var error = await AuthenticationRepository.instance
+        .createUserWithEmailAndPassword(email, password);
     if (error != null) {
       Get.showSnackbar(GetSnackBar(
         message: error.toString(),
