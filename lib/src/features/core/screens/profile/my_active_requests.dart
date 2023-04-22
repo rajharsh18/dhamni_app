@@ -1,4 +1,3 @@
-import 'package:dhamni/src/constants/sizes.dart';
 import 'package:dhamni/src/constants/text_strings.dart';
 import 'package:dhamni/src/features/authentication/models/user_model.dart';
 import 'package:dhamni/src/features/blood_forms/blood_data.dart';
@@ -6,8 +5,6 @@ import 'package:dhamni/src/features/blood_forms/blood_request_controller.dart';
 import 'package:dhamni/src/features/core/controllers/profile_controller.dart';
 import 'package:dhamni/src/features/core/screens/profile/request_status.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:intl/intl.dart';
 import 'package:get/get.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
@@ -34,7 +31,7 @@ class MyActiveRequests extends StatelessWidget {
         body: SingleChildScrollView(
           physics: ScrollPhysics(),
           child: Container(
-            padding: const EdgeInsets.all(tDefaultSize),
+            padding: const EdgeInsets.fromLTRB(10, 30, 10, 10),
             child: FutureBuilder(
               future: controller_pro.getUserData(),
               builder: (con, snap) {
@@ -88,7 +85,7 @@ class MyActiveRequests extends StatelessWidget {
                                             Text(
                                                 "PinCode: ${snapshot.data![index].pinCode}"),
                                             Text(
-                                              "${snapshot.data![index].date}, ${snapshot.data![index].time}",
+                                              "Requested at: ${snapshot.data![index].date}, ${snapshot.data![index].time}",
                                               style: TextStyle(fontSize: 10),
                                               textAlign: TextAlign.end,
                                             ),

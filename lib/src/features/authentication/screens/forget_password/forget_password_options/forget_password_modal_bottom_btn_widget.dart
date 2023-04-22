@@ -2,7 +2,6 @@ import 'package:dhamni/src/constants/sizes.dart';
 import 'package:dhamni/src/constants/text_strings.dart';
 import 'package:dhamni/src/features/authentication/screens/forget_password/forget_password_mail/forget_password_mail.dart';
 import 'package:dhamni/src/features/authentication/screens/forget_password/forget_password_options/forget_password_btn_widget.dart';
-import 'package:dhamni/src/features/authentication/screens/forget_password/forget_password_phone/forget_password_phone.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

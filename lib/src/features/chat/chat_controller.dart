@@ -1,4 +1,3 @@
-import 'package:dhamni/src/features/authentication/models/user_model.dart';
 import 'package:dhamni/src/features/chat/chat_modal.dart';
 import 'package:dhamni/src/features/chat/chat_reposirory.dart';
 import 'package:dhamni/src/repository/authentication_repository/authentication_repository.dart';

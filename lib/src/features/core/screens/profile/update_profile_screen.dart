@@ -339,14 +339,6 @@ class UpdateProfileScreen extends StatelessWidget {
                                       colorText: Colors.green);
                                   Get.offAll(() => const Dashboard());
                                 }
-                                // else {
-                                //   Get.snackbar("Error",
-                                //       "Please Enter the required details.",
-                                //       snackPosition: SnackPosition.TOP,
-                                //       backgroundColor:
-                                //           Colors.redAccent.withOpacity(0.1),
-                                //       colorText: Colors.red);
-                                // }
                               },
                               child: const Text(tEditProfile),
                               style: ElevatedButton.styleFrom(

@@ -1,7 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dhamni/src/features/authentication/models/user_model.dart';
 import 'package:dhamni/src/features/chat/chat_modal.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ChatRepository extends GetxController {

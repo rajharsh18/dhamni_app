@@ -1,13 +1,13 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dhamni/src/constants/sizes.dart';
 import 'package:dhamni/src/constants/text_strings.dart';
 import 'package:dhamni/src/features/blood_forms/blood_data.dart';
 import 'package:dhamni/src/features/blood_forms/blood_request_controller.dart';
 import 'package:dhamni/src/features/core/screens/dashboard/dashboard.dart';
-import 'package:dhamni/src/features/core/screens/profile/my_active_requests.dart';
-import 'package:dhamni/src/features/core/screens/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
+import 'package:intl/intl.dart';
 
 class RequestStatus extends StatelessWidget {
   const RequestStatus({
@@ -108,7 +108,27 @@ class RequestStatus extends StatelessWidget {
                             width: double.infinity,
                             child: ElevatedButton(
                               onPressed: () {
-                                controller.UpdateBloodRecord(bloodData);
+                                DateTime now = DateTime.now();
+                                Timestamp dateTime = Timestamp.now();
+                                String currentDate =
+                                    DateFormat('dd MMMM yyyy').format(now);
+                                String currentTime =
+                                    DateFormat('HH:mm:ss').format(now);
+                                final dataBlood = BloodModel(
+                                    fullName: bloodData.fullName,
+                                    reqBlood: bloodData.reqBlood,
+                                    noUnit: bloodData.noUnit,
+                                    phoneNo: bloodData.phoneNo,
+                                    pinCode: bloodData.pinCode,
+                                    college: bloodData.college,
+                                    status: "Yes",
+                                    email: bloodData.email,
+                                    dateTime: dateTime,
+                                    date: currentDate,
+                                    time: currentTime,
+                                    fullName2: bloodData.fullName2,
+                                    blood_group: bloodData.blood_group);
+                                controller.UpdateBloodRecord(dataBlood);
                                 Get.snackbar("Success", "Record Updated.",
                                     snackPosition: SnackPosition.BOTTOM,
                                     backgroundColor:

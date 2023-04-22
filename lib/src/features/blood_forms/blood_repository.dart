@@ -107,9 +107,20 @@ class BloodRepository extends GetxController {
   }
 
   Future<void> updateBloodRecord(BloodModel reqBlood) async {
-    await _db
-        .collection("Blood_requests")
-        .doc(reqBlood.id)
-        .update({'Status': 'Yes'});
+    await _db.collection("Blood_requests").doc(reqBlood.id).set({
+      "NamePatient": reqBlood.fullName,
+      "BloodRequired": reqBlood.reqBlood,
+      "NOofUnit": reqBlood.noUnit,
+      "PMobNum": reqBlood.phoneNo,
+      "PinCode": reqBlood.pinCode,
+      "College": reqBlood.college,
+      "Status": reqBlood.status,
+      "Email": reqBlood.email,
+      "DateTime": reqBlood.dateTime,
+      "Date": reqBlood.date,
+      "Time": reqBlood.time,
+      "FullName": reqBlood.fullName2,
+      "BloodGroup": reqBlood.blood_group,
+    });
   }
 }

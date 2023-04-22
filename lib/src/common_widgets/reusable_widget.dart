@@ -1,18 +1,5 @@
 import 'package:flutter/material.dart';
 
-// TextFormField(
-//   // controller: controller.password,
-//   decoration: InputDecoration(
-//       prefixIcon: Icon(Icons.fingerprint),
-//       labelText: tPassword,
-//       hintText: tPassword,
-//       border: OutlineInputBorder(),
-//       suffixIcon: IconButton(
-//         onPressed: null,
-//         icon: Icon(Icons.remove_red_eye_sharp),
-//       )),
-// ),
-
 TextField reusableTextField(String text, IconData icon, bool isPasswordType,
     TextEditingController controller) {
   return TextField(

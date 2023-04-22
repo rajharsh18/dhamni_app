@@ -5,7 +5,7 @@ import 'package:dhamni/src/features/blood_forms/blood_data.dart';
 import 'package:dhamni/src/features/blood_forms/blood_request_controller.dart';
 import 'package:dhamni/src/features/chat/chat_controller.dart';
 import 'package:dhamni/src/features/chat/chat_modal.dart';
-import 'package:dhamni/src/features/chat/chat_room.dart.dart';
+import 'package:dhamni/src/features/chat/chat_room.dart';
 import 'package:dhamni/src/features/core/controllers/profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -51,7 +51,7 @@ class _AllRequestState extends State<AllRequest> with WidgetsBindingObserver {
       body: SingleChildScrollView(
         physics: ScrollPhysics(),
         child: Container(
-          padding: const EdgeInsets.all(tDefaultSize),
+          padding: const EdgeInsets.fromLTRB(10, 30, 10, 10),
           child: FutureBuilder(
             future: controller_pro.getUserData(),
             builder: (con, snap) {
@@ -88,7 +88,9 @@ class _AllRequestState extends State<AllRequest> with WidgetsBindingObserver {
                                         child: Icon(LineAwesomeIcons.user_1),
                                       ),
                                       title: Text(
-                                          "Patient's Name: ${snapshot.data![index].fullName}"),
+                                        "Patient's Name: ${snapshot.data![index].fullName}",
+                                        style: TextStyle(fontSize: 22),
+                                      ),
                                       subtitle: Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.stretch,

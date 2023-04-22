@@ -102,24 +102,6 @@ class SignUpForm extends StatelessWidget {
                         ),
                         style: TextStyle(fontSize: 20),
                       ),
-                      // const SizedBox(height: tFormHeight - 20),
-                      // TextFormField(
-                      //   validator: (value) {
-                      //     if (value == null || value.isEmpty) {
-                      //       return 'Please enter Password.';
-                      //     } else {
-                      //       return null;
-                      //     }
-                      //   },
-                      //   controller: controller.password,
-                      //   decoration: InputDecoration(
-                      //     prefixIcon: Icon(Icons.password_outlined),
-                      //     labelText: tPassword,
-                      //     hintText: tPassword,
-                      //     // border: OutlineInputBorder(),
-                      //   ),
-                      //   style: TextStyle(fontSize: 20),
-                      // ),
                       const SizedBox(height: tFormHeight - 20),
                       SizedBox(
                         width: double.infinity,

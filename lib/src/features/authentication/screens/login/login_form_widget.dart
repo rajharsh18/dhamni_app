@@ -72,11 +72,6 @@ class LoginForm extends StatelessWidget {
                         prefixIcon: Icon(Icons.fingerprint),
                         labelText: tPassword,
                         hintText: tPassword,
-                        // border: OutlineInputBorder(),
-                        // suffixIcon: IconButton(
-                        //   onPressed: null,
-                        //   icon: Icon(Icons.remove_red_eye_sharp),
-                        // ),
                       ),
                       style: TextStyle(fontSize: 20),
                     ),
@@ -107,15 +102,6 @@ class LoginForm extends StatelessWidget {
                                       builder: (context) => Dashboard()));
                             }).onError((error, stackTrace) {
                               {
-                                // String? error = AuthenticationRepository
-                                //     .instance
-                                //     .loginWithEmailAndPassword(
-                                //         controller.email.text,
-                                //         controller.password.text) as String?;
-                                // if (error != null) {
-                                //   Get.showSnackbar(GetSnackBar(
-                                //     message: error.toString(),
-                                //   ));
                                 Get.snackbar("Alert", "Incorrect Password.",
                                     snackPosition: SnackPosition.BOTTOM,
                                     backgroundColor:

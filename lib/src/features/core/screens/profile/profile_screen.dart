@@ -129,13 +129,6 @@ class ProfileScreen extends StatelessWidget {
                         iconCircleColor: tAccentColor,
                         onPress: () => Get.to(() => MyCompletedRequests()),
                       ),
-                      // ProfileMenuWidget(
-                      //   title: "User Management",
-                      //   icon: LineAwesomeIcons.cog,
-                      //   iconIconColor: tAccentColor,
-                      //   iconCircleColor: tAccentColor,
-                      //   onPress: () => Get.to(() => AllUsers()),
-                      // ),
                       const Divider(
                         color: Colors.grey,
                       ),

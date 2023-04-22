@@ -1,9 +1,8 @@
-import 'package:dhamni/src/constants/sizes.dart';
 import 'package:dhamni/src/constants/text_strings.dart';
 import 'package:dhamni/src/features/authentication/models/user_model.dart';
 import 'package:dhamni/src/features/chat/chat_controller.dart';
 import 'package:dhamni/src/features/chat/chat_modal.dart';
-import 'package:dhamni/src/features/chat/chat_room.dart.dart';
+import 'package:dhamni/src/features/chat/chat_room.dart';
 import 'package:dhamni/src/features/core/controllers/profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -25,14 +24,14 @@ class DonorChat extends StatelessWidget {
           icon: const Icon(LineAwesomeIcons.angle_left),
         ),
         title: Text(
-          tChat,
+          tDonating,
           style: Theme.of(context).textTheme.headlineSmall,
         ),
       ),
       body: SingleChildScrollView(
         physics: ScrollPhysics(),
         child: Container(
-          padding: const EdgeInsets.all(tDefaultSize),
+          padding: const EdgeInsets.fromLTRB(10, 30, 10, 10),
           child: FutureBuilder(
             future: controller_pro.getUserData(),
             builder: (con, snap) {
@@ -73,26 +72,10 @@ class DonorChat extends StatelessWidget {
                                         ),
                                         child: Icon(LineAwesomeIcons.user_1),
                                       ),
-                                      title: Text(receiver),
-                                      // subtitle: Column(
-                                      //   crossAxisAlignment:
-                                      //       CrossAxisAlignment.stretch,
-                                      //   children: [
-                                      //     Text(
-                                      //         "Required Blood Group: ${snapshot.data![index].reqBlood}"),
-                                      //     Text(
-                                      //         "No. of unit required: ${snapshot.data![index].noUnit}"),
-                                      //     Text(
-                                      //         "Phone Number: ${snapshot.data![index].phoneNo}"),
-                                      //     Text(
-                                      //         "PinCode: ${snapshot.data![index].pinCode}"),
-                                      //     Text(
-                                      //       "${snapshot.data![index].date}, ${snapshot.data![index].time}",
-                                      //       style: TextStyle(fontSize: 10),
-                                      //       textAlign: TextAlign.end,
-                                      //     ),
-                                      // ],
-                                      // ),
+                                      title: Text(
+                                        receiver,
+                                        style: TextStyle(fontSize: 22),
+                                      ),
                                       onTap: () {
                                         Navigator.of(context).push(
                                           MaterialPageRoute(
@@ -118,30 +101,6 @@ class DonorChat extends StatelessWidget {
                                       ),
                                     ),
                                   ),
-                                  // SizedBox(
-                                  //   width: double.infinity,
-                                  //   child: ElevatedButton(
-                                  //     onPressed: () {
-                                  //       Navigator.of(context).push(
-                                  //         MaterialPageRoute(
-                                  //           builder: (_) => ChatRoom(
-                                  //             chatRoomId:
-                                  //                 snapshot.data![index].id,
-                                  //             sender: name_user,
-                                  //             receiver: receiver,
-                                  //           ),
-                                  //         ),
-                                  //       );
-                                  //     },
-                                  //     child: const Text("Chat"),
-                                  //     style: ElevatedButton.styleFrom(
-                                  //       side: BorderSide.none,
-                                  //       backgroundColor: Colors.blue,
-                                  //       foregroundColor: Colors.white,
-                                  //       shape: StadiumBorder(),
-                                  //     ),
-                                  //   ),
-                                  // ),
                                   SizedBox(
                                     height: 25,
                                   )

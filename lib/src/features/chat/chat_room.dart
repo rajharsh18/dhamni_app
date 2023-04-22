@@ -93,37 +93,8 @@ class ChatRoom extends StatelessWidget {
               ),
             ),
             Container(
-              height: size.height / 10,
-              width: size.width,
-              alignment: Alignment.center,
-              child: Container(
-                height: size.height / 12,
-                width: size.width / 1.1,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      height: size.height / 17,
-                      width: size.width / 1.3,
-                      child: TextField(
-                        controller: _message,
-                        decoration: InputDecoration(
-                            // suffixIcon: IconButton(
-                            //   onPressed: () => getImage(),
-                            //   icon: Icon(Icons.photo),
-                            // ),
-                            hintText: "Send Message",
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(8),
-                            )),
-                      ),
-                    ),
-                    IconButton(
-                        icon: const Icon(Icons.send), onPressed: onSendMessage),
-                  ],
-                ),
-              ),
-            ),
+              child: _chatInput(context, 10, _message, onSendMessage),
+            )
           ],
         ),
       ),
@@ -138,8 +109,8 @@ class ChatRoom extends StatelessWidget {
                 ? Alignment.centerRight
                 : Alignment.centerLeft,
             child: Container(
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 14),
-              margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 8),
+              padding: const EdgeInsets.symmetric(vertical: 7, horizontal: 10),
+              margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
                 color: Colors.blue,
@@ -154,54 +125,51 @@ class ChatRoom extends StatelessWidget {
               ),
             ),
           )
-        : Container(
-            height: size.height / 2.5,
-            width: size.width,
-            padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 5),
-            alignment: map['sendby'] == _auth.currentUser!.displayName
-                ? Alignment.centerRight
-                : Alignment.centerLeft,
-            child: InkWell(
-              onTap: () => Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => ShowImage(
-                    imageUrl: map['message'],
-                  ),
-                ),
-              ),
-              child: Container(
-                height: size.height / 2.5,
-                width: size.width / 2,
-                decoration: BoxDecoration(border: Border.all()),
-                alignment: map['message'] != "" ? null : Alignment.center,
-                child: map['message'] != ""
-                    ? Image.network(
-                        map['message'],
-                        fit: BoxFit.cover,
-                      )
-                    : const CircularProgressIndicator(),
-              ),
-            ),
-          );
+        : Container();
   }
 }
 
-class ShowImage extends StatelessWidget {
-  final String imageUrl;
+Widget _chatInput(BuildContext context, double size, message, onSendMessage) {
+  return Padding(
+    padding: EdgeInsets.all(size),
+    child: Row(
+      children: [
+        //input field & buttons
+        Expanded(
+          child: Card(
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+            child: Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    controller: message,
+                    keyboardType: TextInputType.multiline,
+                    maxLines: null,
+                    decoration: const InputDecoration(
+                        contentPadding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                        hintText: 'Type Something...',
+                        hintStyle: TextStyle(color: Colors.blueAccent),
+                        border: InputBorder.none),
+                    style: TextStyle(fontSize: 20),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
 
-  const ShowImage({required this.imageUrl, Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
-
-    return Scaffold(
-      body: Container(
-        height: size.height,
-        width: size.width,
-        color: Colors.black,
-        child: Image.network(imageUrl),
-      ),
-    );
-  }
+        //send message button
+        MaterialButton(
+          onPressed: onSendMessage,
+          minWidth: 0,
+          padding:
+              const EdgeInsets.only(top: 10, bottom: 10, right: 5, left: 10),
+          shape: const CircleBorder(),
+          color: Colors.green,
+          child: const Icon(Icons.send, color: Colors.white, size: 28),
+        )
+      ],
+    ),
+  );
 }

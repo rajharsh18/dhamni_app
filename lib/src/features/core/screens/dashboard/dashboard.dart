@@ -167,21 +167,6 @@ class Dashboard extends StatelessWidget {
                               Divider(
                                 color: Color.fromARGB(255, 0, 0, 0),
                               ),
-                              // SizedBox(
-                              //   height: 10,
-                              // ),
-                              // ProfileMenuWidget(
-                              //   title: tChat,
-                              //   tileColor: Color.fromARGB(255, 255, 255, 255),
-                              //   textColor: Color.fromARGB(255, 0, 0, 0),
-                              //   iconIconColor: tAccentColor,
-                              //   iconCircleColor:
-                              //       Color.fromARGB(255, 7, 78, 136),
-                              //   endIconColor: Colors.grey,
-                              //   endCircleColor: Colors.grey,
-                              //   icon: LineAwesomeIcons.alternate_file,
-                              //   onPress: () => Get.to(() => AllChat()),
-                              // ),
                               SizedBox(
                                 height: 10,
                               ),
@@ -215,21 +200,6 @@ class Dashboard extends StatelessWidget {
                               SizedBox(
                                 height: 10,
                               ),
-                              // ProfileMenuWidget(
-                              //   title: tDonating,
-                              //   tileColor: Color.fromARGB(255, 255, 255, 255),
-                              //   textColor: Color.fromARGB(255, 0, 0, 0),
-                              //   iconIconColor: tAccentColor,
-                              //   iconCircleColor:
-                              //       Color.fromARGB(255, 7, 78, 136),
-                              //   endIconColor: Colors.grey,
-                              //   endCircleColor: Colors.grey,
-                              //   icon: LineAwesomeIcons.alternate_file,
-                              //   onPress: () => Get.to(() => {}),
-                              // ),
-                              // SizedBox(
-                              //   height: 10,
-                              // ),
                               Divider(
                                 color: Color.fromARGB(255, 0, 0, 0),
                               ),
