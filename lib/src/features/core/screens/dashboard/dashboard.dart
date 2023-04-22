@@ -7,6 +7,8 @@ import 'package:dhamni/src/features/blood_forms/all_request.dart';
 import 'package:dhamni/src/features/blood_forms/all_request_college.dart';
 import 'package:dhamni/src/features/blood_forms/all_request_pincode.dart';
 import 'package:dhamni/src/features/blood_forms/blood_request_form.dart';
+import 'package:dhamni/src/features/chat/donor_chat.dart';
+import 'package:dhamni/src/features/chat/receiver_chat.dart';
 import 'package:dhamni/src/features/core/controllers/profile_controller.dart';
 import 'package:dhamni/src/features/core/screens/profile/profile_screen.dart';
 import 'package:dhamni/src/features/core/screens/profile/widgets/profile_menu.dart';
@@ -145,6 +147,72 @@ class Dashboard extends StatelessWidget {
                               SizedBox(
                                 height: 10,
                               ),
+                              Divider(
+                                color: Color.fromARGB(255, 0, 0, 0),
+                              ),
+                              // SizedBox(
+                              //   height: 10,
+                              // ),
+                              // ProfileMenuWidget(
+                              //   title: tChat,
+                              //   tileColor: Color.fromARGB(255, 255, 255, 255),
+                              //   textColor: Color.fromARGB(255, 0, 0, 0),
+                              //   iconIconColor: tAccentColor,
+                              //   iconCircleColor:
+                              //       Color.fromARGB(255, 7, 78, 136),
+                              //   endIconColor: Colors.grey,
+                              //   endCircleColor: Colors.grey,
+                              //   icon: LineAwesomeIcons.alternate_file,
+                              //   onPress: () => Get.to(() => AllChat()),
+                              // ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              ProfileMenuWidget(
+                                title: tDonating,
+                                tileColor: Color.fromARGB(255, 255, 255, 255),
+                                textColor: Color.fromARGB(255, 0, 0, 0),
+                                iconIconColor: tAccentColor,
+                                iconCircleColor:
+                                    Color.fromARGB(255, 7, 78, 136),
+                                endIconColor: Colors.grey,
+                                endCircleColor: Colors.grey,
+                                icon: LineAwesomeIcons.alternate_file,
+                                onPress: () => Get.to(() => DonorChat()),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              ProfileMenuWidget(
+                                title: tRequestChat,
+                                tileColor: Color.fromARGB(255, 255, 255, 255),
+                                textColor: Color.fromARGB(255, 0, 0, 0),
+                                iconIconColor: tAccentColor,
+                                iconCircleColor:
+                                    Color.fromARGB(255, 7, 78, 136),
+                                endIconColor: Colors.grey,
+                                endCircleColor: Colors.grey,
+                                icon: LineAwesomeIcons.alternate_file,
+                                onPress: () => Get.to(() => ReceiverChat()),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              // ProfileMenuWidget(
+                              //   title: tDonating,
+                              //   tileColor: Color.fromARGB(255, 255, 255, 255),
+                              //   textColor: Color.fromARGB(255, 0, 0, 0),
+                              //   iconIconColor: tAccentColor,
+                              //   iconCircleColor:
+                              //       Color.fromARGB(255, 7, 78, 136),
+                              //   endIconColor: Colors.grey,
+                              //   endCircleColor: Colors.grey,
+                              //   icon: LineAwesomeIcons.alternate_file,
+                              //   onPress: () => Get.to(() => {}),
+                              // ),
+                              // SizedBox(
+                              //   height: 10,
+                              // ),
                               Divider(
                                 color: Color.fromARGB(255, 0, 0, 0),
                               ),

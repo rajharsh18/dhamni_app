@@ -41,7 +41,6 @@ class SignUpForm extends StatelessWidget {
                     email_reg.add(snapshot.data![i].email);
                     phoneNo_reg.add(snapshot.data![i].phoneNo);
                   }
-                  ;
 
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,

@@ -121,6 +121,8 @@ class MyActiveRequests extends StatelessWidget {
                                                 snapshot.data![index].dateTime,
                                             date: snapshot.data![index].date,
                                             time: snapshot.data![index].time,
+                                            fullName2:
+                                                snapshot.data![index].fullName2,
                                           );
                                           Get.to(() => RequestStatus(
                                                 bloodData: bloodData,

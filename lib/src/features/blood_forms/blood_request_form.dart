@@ -28,6 +28,7 @@ class Blood_request extends StatelessWidget {
     var status = "No";
     var email = "";
     var pin = "";
+    var fullName2 = "";
     var currentDate = '';
     var currentTime = '';
     final _blood = [
@@ -65,6 +66,7 @@ class Blood_request extends StatelessWidget {
                     UserModel user = snapshot.data as UserModel;
                     college = user.collegeName;
                     email = user.email;
+                    fullName2 = user.fullName;
                     pin = user.pinCode;
                     return Form(
                       key: _formKey,
@@ -197,6 +199,7 @@ class Blood_request extends StatelessWidget {
                                     dateTime: dateTime,
                                     date: currentDate,
                                     time: currentTime,
+                                    fullName2: fullName2,
                                   );
                                   BloodController.instance.addRequest(reqblood);
                                   Get.offAll(const Dashboard());

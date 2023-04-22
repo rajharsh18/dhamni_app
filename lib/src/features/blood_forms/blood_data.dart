@@ -13,6 +13,7 @@ class BloodModel {
   final Timestamp dateTime;
   final String date;
   final String time;
+  final String fullName2;
 
   const BloodModel({
     this.id,
@@ -27,6 +28,7 @@ class BloodModel {
     required this.dateTime,
     required this.date,
     required this.time,
+    required this.fullName2,
   });
 
   toJson() {
@@ -42,6 +44,7 @@ class BloodModel {
       "DateTime": dateTime,
       "Date": date,
       "Time": time,
+      "FullName": fullName2,
     };
   }
 
@@ -61,6 +64,7 @@ class BloodModel {
       dateTime: data["DateTime"],
       date: data["Date"],
       time: data["Time"],
+      fullName2: data["FullName"],
     );
   }
 }

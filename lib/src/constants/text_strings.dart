@@ -75,6 +75,9 @@ const String tDemandedPinCode = "Demanded at your PinCode";
 const String tDemandedCollege = "Demanded at your College";
 const String tMyActiveRequest = "My Active Request";
 const String tMyCompletedRequest = "My Completed Request";
+const String tDonating = "Donating Chat";
+const String tRequestChat = "Request Chat";
+const String tChat = "My Chats";
 
 // Patient details
 const String tPatientName = "Patient's Name";
