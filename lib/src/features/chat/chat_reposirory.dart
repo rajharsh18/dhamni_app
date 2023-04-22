@@ -23,7 +23,7 @@ class ChatRepository extends GetxController {
   Future<List<ChatModel>> receiverChat(String email) async {
     final snapshot = await _db
         .collection("Chatroom")
-        .where("Email1", isEqualTo: email)
+        .where("Email2", isEqualTo: email)
         .get();
     final userData =
         snapshot.docs.map((e) => ChatModel.fromSnapshot(e)).toList();

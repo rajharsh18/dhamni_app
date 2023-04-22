@@ -4,6 +4,7 @@ import 'package:dhamni/src/constants/sizes.dart';
 import 'package:dhamni/src/constants/text_strings.dart';
 import 'package:dhamni/src/features/authentication/models/user_model.dart';
 import 'package:dhamni/src/features/blood_forms/all_request.dart';
+import 'package:dhamni/src/features/blood_forms/all_request_blood_group.dart';
 import 'package:dhamni/src/features/blood_forms/all_request_college.dart';
 import 'package:dhamni/src/features/blood_forms/all_request_pincode.dart';
 import 'package:dhamni/src/features/blood_forms/blood_request_form.dart';
@@ -143,6 +144,22 @@ class Dashboard extends StatelessWidget {
                                 icon: LineAwesomeIcons.alternate_file,
                                 onPress: () =>
                                     Get.to(() => AllRequestPincode()),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              ProfileMenuWidget(
+                                title: tDemandedBloogGroup,
+                                tileColor: Color.fromARGB(255, 255, 255, 255),
+                                textColor: Color.fromARGB(255, 0, 0, 0),
+                                iconIconColor: tAccentColor,
+                                iconCircleColor:
+                                    Color.fromARGB(255, 7, 78, 136),
+                                endIconColor: Colors.grey,
+                                endCircleColor: Colors.grey,
+                                icon: LineAwesomeIcons.alternate_file,
+                                onPress: () =>
+                                    Get.to(() => AllRequestBloodGroup()),
                               ),
                               SizedBox(
                                 height: 10,

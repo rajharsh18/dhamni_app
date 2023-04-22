@@ -11,6 +11,7 @@ class UserModel {
   final String dateTime;
   final String date;
   final String time;
+  final String bloodGroup;
 
   const UserModel({
     this.id,
@@ -23,6 +24,7 @@ class UserModel {
     required this.dateTime,
     required this.date,
     required this.time,
+    required this.bloodGroup,
   });
 
   toJson() {
@@ -36,6 +38,7 @@ class UserModel {
       "DateTime": dateTime,
       "Date": date,
       "Time": time,
+      "BloodGroup": bloodGroup,
     };
   }
 
@@ -53,6 +56,7 @@ class UserModel {
       dateTime: data["DateTime"],
       date: data["Date"],
       time: data["Time"],
+      bloodGroup: data["BloodGroup"],
     );
   }
 }

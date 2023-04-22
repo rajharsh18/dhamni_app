@@ -20,6 +20,7 @@ class OTPScreen extends StatelessWidget {
     required this.dateTime,
     required this.date,
     required this.time,
+    required this.bloodGroup,
   });
 
   // final UserModel? user;
@@ -32,6 +33,7 @@ class OTPScreen extends StatelessWidget {
   final String dateTime;
   final String date;
   final String time;
+  final String bloodGroup;
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +48,8 @@ class OTPScreen extends StatelessWidget {
         pinCode: pinCode,
         dateTime: dateTime,
         date: date,
-        time: time);
+        time: time,
+        bloodGroup: bloodGroup);
     var otp;
     return Scaffold(
       body: SingleChildScrollView(

@@ -14,8 +14,8 @@ import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 class UpdateProfileScreen extends StatelessWidget {
   UpdateProfileScreen({Key? key}) : super(key: key);
 
-  // ignore: non_constant_identifier_names
   late String college_id;
+  final _formKey = GlobalKey<FormState>();
   final _college = [
     "Select College Name",
     "Acharya Narendra Dev College",
@@ -124,6 +124,19 @@ class UpdateProfileScreen extends StatelessWidget {
     "Zakir Husain Delhi College",
     "Zakir Husain Post Graduate Evening College"
   ];
+  late String blood_id;
+  final _blood = [
+    "Select Blood Group",
+    "A+",
+    "A-",
+    "B+",
+    "B-",
+    "AB+",
+    "AB-",
+    "O+",
+    "O-",
+    "Others"
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -152,7 +165,7 @@ class UpdateProfileScreen extends StatelessWidget {
                 final fullName = TextEditingController(text: user.fullName);
                 final pinCode = TextEditingController(text: user.pinCode);
                 college_id = user.collegeName;
-
+                blood_id = user.bloodGroup;
                 return Column(
                   children: [
                     Stack(
@@ -190,6 +203,7 @@ class UpdateProfileScreen extends StatelessWidget {
                       height: 50,
                     ),
                     Form(
+                      key: _formKey,
                       child: Column(
                         children: [
                           TextFormField(
@@ -233,6 +247,37 @@ class UpdateProfileScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: tFormHeight - 20),
                           DropdownButtonFormField(
+                            validator: (value) {
+                              if (value == "Select Blood Group") {
+                                return "Please select your Blood.";
+                              }
+                              return null;
+                            },
+                            value: blood_id,
+                            itemHeight: null,
+                            isExpanded: true,
+                            decoration: const InputDecoration(
+                                label: Text(tBloodGroup),
+                                prefixIcon: Icon(Icons.home_rounded)),
+                            style: TextStyle(fontSize: 20, color: Colors.black),
+                            items: _blood
+                                .map((e) => DropdownMenuItem(
+                                      child: Text(e),
+                                      value: e,
+                                    ))
+                                .toList(),
+                            onChanged: (value) {
+                              blood_id = value!;
+                            },
+                          ),
+                          const SizedBox(height: tFormHeight - 20),
+                          DropdownButtonFormField(
+                            validator: (value) {
+                              if (value == "Select College Name") {
+                                return "Please select your College.";
+                              }
+                              return null;
+                            },
                             value: college_id,
                             itemHeight: null,
                             isExpanded: true,
@@ -240,9 +285,6 @@ class UpdateProfileScreen extends StatelessWidget {
                                 label: Text(tCollegeName),
                                 prefixIcon: Icon(Icons.home_rounded)),
                             style: TextStyle(fontSize: 20, color: Colors.black),
-
-                            // dropdownColor: Colors.black,
-                            // focusColor: Colors.black,
                             items: _college
                                 .map((e) => DropdownMenuItem(
                                       child: Text(e),
@@ -254,6 +296,12 @@ class UpdateProfileScreen extends StatelessWidget {
                             },
                           ),
                           TextFormField(
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return "Please enter your PinCode.";
+                              }
+                              return null;
+                            },
                             controller: pinCode,
                             keyboardType: TextInputType.number,
                             minLines: null,
@@ -268,26 +316,37 @@ class UpdateProfileScreen extends StatelessWidget {
                             width: double.infinity,
                             child: ElevatedButton(
                               onPressed: () async {
-                                final userNewData = UserModel(
-                                  email: user.email,
-                                  password: user.password,
-                                  phoneNo: user.phoneNo,
-                                  fullName: fullName.text.trim(),
-                                  collegeName: college_id,
-                                  pinCode: pinCode.text.trim(),
-                                  dateTime: user.dateTime,
-                                  date: user.date,
-                                  time: user.time,
-                                );
+                                if (_formKey.currentState!.validate()) {
+                                  final userNewData = UserModel(
+                                    email: user.email,
+                                    password: user.password,
+                                    phoneNo: user.phoneNo,
+                                    fullName: fullName.text.trim(),
+                                    collegeName: college_id,
+                                    pinCode: pinCode.text.trim(),
+                                    dateTime: user.dateTime,
+                                    date: user.date,
+                                    time: user.time,
+                                    bloodGroup: blood_id,
+                                  );
 
-                                await controller.UpdateRecord(
-                                    user, userNewData);
-                                Get.snackbar("Success", "Record Updated.",
-                                    snackPosition: SnackPosition.BOTTOM,
-                                    backgroundColor:
-                                        Colors.green.withOpacity(0.1),
-                                    colorText: Colors.green);
-                                Get.offAll(() => const Dashboard());
+                                  await controller.UpdateRecord(
+                                      user, userNewData);
+                                  Get.snackbar("Success", "Record Updated.",
+                                      snackPosition: SnackPosition.BOTTOM,
+                                      backgroundColor:
+                                          Colors.green.withOpacity(0.1),
+                                      colorText: Colors.green);
+                                  Get.offAll(() => const Dashboard());
+                                }
+                                // else {
+                                //   Get.snackbar("Error",
+                                //       "Please Enter the required details.",
+                                //       snackPosition: SnackPosition.TOP,
+                                //       backgroundColor:
+                                //           Colors.redAccent.withOpacity(0.1),
+                                //       colorText: Colors.red);
+                                // }
                               },
                               child: const Text(tEditProfile),
                               style: ElevatedButton.styleFrom(

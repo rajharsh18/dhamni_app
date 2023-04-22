@@ -14,6 +14,7 @@ class BloodModel {
   final String date;
   final String time;
   final String fullName2;
+  final String blood_group;
 
   const BloodModel({
     this.id,
@@ -29,6 +30,7 @@ class BloodModel {
     required this.date,
     required this.time,
     required this.fullName2,
+    required this.blood_group,
   });
 
   toJson() {
@@ -45,6 +47,7 @@ class BloodModel {
       "Date": date,
       "Time": time,
       "FullName": fullName2,
+      "BloodGroup": blood_group,
     };
   }
 
@@ -65,6 +68,7 @@ class BloodModel {
       date: data["Date"],
       time: data["Time"],
       fullName2: data["FullName"],
+      blood_group: data["BloodGroup"],
     );
   }
 }

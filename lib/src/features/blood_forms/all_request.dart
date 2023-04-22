@@ -61,7 +61,7 @@ class _AllRequestState extends State<AllRequest> with WidgetsBindingObserver {
                   final email_user = user.email;
                   final name_user = user.fullName;
                   return FutureBuilder<List<BloodModel>>(
-                    future: controller.getAllRequest(),
+                    future: controller.getAllRequest(email_user),
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.done) {
                         if (snapshot.hasData) {
@@ -133,7 +133,7 @@ class _AllRequestState extends State<AllRequest> with WidgetsBindingObserver {
                                               chatRoomId: roomId,
                                               sender: name_user,
                                               receiver: snapshot
-                                                  .data![index].fullName,
+                                                  .data![index].fullName2,
                                             ),
                                           ),
                                         );

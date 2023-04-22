@@ -94,12 +94,7 @@ class ReceiverChat extends StatelessWidget {
                                       //     ),
                                       // ],
                                       // ),
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    width: double.infinity,
-                                    child: ElevatedButton(
-                                      onPressed: () {
+                                      onTap: () {
                                         Navigator.of(context).push(
                                           MaterialPageRoute(
                                             builder: (_) => ChatRoom(
@@ -107,22 +102,50 @@ class ReceiverChat extends StatelessWidget {
                                                   snapshot.data![index].id,
                                               sender: name_user,
                                               receiver: receiver,
-                                              // user1:,
-                                              // user2:,
-                                              // userMap: userMap!,
                                             ),
                                           ),
                                         );
                                       },
-                                      child: const Text("Chat"),
-                                      style: ElevatedButton.styleFrom(
-                                        side: BorderSide.none,
-                                        backgroundColor: Colors.blue,
-                                        foregroundColor: Colors.white,
-                                        shape: StadiumBorder(),
+                                      trailing: Container(
+                                        width: 40,
+                                        height: 40,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(100),
+                                          color: Colors.blue.withOpacity(0.1),
+                                        ),
+                                        child:
+                                            Icon(LineAwesomeIcons.envelope_1),
                                       ),
                                     ),
                                   ),
+                                  // SizedBox(
+                                  //   width: double.infinity,
+                                  //   child: ElevatedButton(
+                                  //     onPressed: () {
+                                  //       Navigator.of(context).push(
+                                  //         MaterialPageRoute(
+                                  //           builder: (_) => ChatRoom(
+                                  //             chatRoomId:
+                                  //                 snapshot.data![index].id,
+                                  //             sender: name_user,
+                                  //             receiver: receiver,
+                                  //             // user1:,
+                                  //             // user2:,
+                                  //             // userMap: userMap!,
+                                  //           ),
+                                  //         ),
+                                  //       );
+                                  //     },
+                                  //     child: const Text("Chat"),
+                                  //     style: ElevatedButton.styleFrom(
+                                  //       side: BorderSide.none,
+                                  //       backgroundColor: Colors.blue,
+                                  //       foregroundColor: Colors.white,
+                                  //       shape: StadiumBorder(),
+                                  //     ),
+                                  //   ),
+                                  // ),
                                   SizedBox(
                                     height: 25,
                                   )

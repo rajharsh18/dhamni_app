@@ -26,6 +26,7 @@ class SignUpForm extends StatelessWidget {
     var phoneNo_reg = <String>[];
     var currentDate = '';
     var currentTime = '';
+    var bloodGroup = "Select Blood Group";
 
     return Container(
       padding: const EdgeInsets.symmetric(vertical: tFormHeight - 10),
@@ -141,6 +142,7 @@ class SignUpForm extends StatelessWidget {
                                 dateTime: now.toString().trim(),
                                 date: currentDate,
                                 time: currentTime,
+                                bloodGroup: bloodGroup,
                               );
                               SignUpController.instance.createUser(user);
                             }

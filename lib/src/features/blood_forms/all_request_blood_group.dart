@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
-class AllRequestPincode extends StatelessWidget {
-  const AllRequestPincode({Key? key}) : super(key: key);
+class AllRequestBloodGroup extends StatelessWidget {
+  const AllRequestBloodGroup({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,11 +37,11 @@ class AllRequestPincode extends StatelessWidget {
                 if (snap.connectionState == ConnectionState.done) {
                   if (snap.hasData) {
                     UserModel user = snap.data as UserModel;
-                    final pin_user = user.pinCode;
+                    final blood_group = user.bloodGroup;
                     final email_user = user.email;
                     return FutureBuilder<List<BloodModel>>(
-                      future:
-                          controller.getPincodeRequest(pin_user, email_user),
+                      future: controller.getBloodGroupRequest(
+                          blood_group, email_user),
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.done) {
                           if (snapshot.hasData) {

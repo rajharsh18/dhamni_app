@@ -38,8 +38,10 @@ class AllRequestCollege extends StatelessWidget {
                   if (snap.hasData) {
                     UserModel user = snap.data as UserModel;
                     final coll_user = user.collegeName;
+                    final email_user = user.email;
                     return FutureBuilder<List<BloodModel>>(
-                      future: controller.getCollegeRequest(coll_user),
+                      future:
+                          controller.getCollegeRequest(coll_user, email_user),
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.done) {
                           if (snapshot.hasData) {

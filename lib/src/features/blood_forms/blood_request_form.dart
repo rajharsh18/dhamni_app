@@ -29,6 +29,7 @@ class Blood_request extends StatelessWidget {
     var email = "";
     var pin = "";
     var fullName2 = "";
+    var blood_group = "";
     var currentDate = '';
     var currentTime = '';
     final _blood = [
@@ -67,6 +68,7 @@ class Blood_request extends StatelessWidget {
                     college = user.collegeName;
                     email = user.email;
                     fullName2 = user.fullName;
+                    blood_group = user.bloodGroup;
                     pin = user.pinCode;
                     return Form(
                       key: _formKey,
@@ -99,12 +101,9 @@ class Blood_request extends StatelessWidget {
                             value: blood_id,
                             itemHeight: null,
                             isExpanded: true,
-                            decoration: InputDecoration(
-                              prefixIcon: Icon(Icons.home_rounded),
-                              labelText: tBloodGroup,
-                              hintText: tBloodGroup,
-                              // border: OutlineInputBorder(),
-                            ),
+                            decoration: const InputDecoration(
+                                label: Text(tBloodGroup),
+                                prefixIcon: Icon(Icons.home_rounded)),
                             style: TextStyle(fontSize: 20, color: Colors.black),
                             items: _blood
                                 .map((e) => DropdownMenuItem(
@@ -173,9 +172,10 @@ class Blood_request extends StatelessWidget {
                             child: ElevatedButton(
                               onPressed: () {
                                 if (college == "Select College Name" ||
-                                    pin == "") {
+                                    pin == "" ||
+                                    blood_group == "Select Blood Group") {
                                   Get.snackbar("Error",
-                                      "Please Update your College and PinCode in the Profile Menu.",
+                                      "Please Update your College, PinCode and Blood Group in the Profile Menu.",
                                       snackPosition: SnackPosition.BOTTOM,
                                       backgroundColor:
                                           Colors.redAccent.withOpacity(0.1),
@@ -200,6 +200,7 @@ class Blood_request extends StatelessWidget {
                                     date: currentDate,
                                     time: currentTime,
                                     fullName2: fullName2,
+                                    blood_group: blood_group,
                                   );
                                   BloodController.instance.addRequest(reqblood);
                                   Get.offAll(const Dashboard());

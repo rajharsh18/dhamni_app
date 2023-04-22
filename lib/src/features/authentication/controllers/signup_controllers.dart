@@ -40,7 +40,8 @@ class SignUpController extends GetxController {
         pinCode: user.pinCode,
         dateTime: user.dateTime,
         date: user.date,
-        time: user.time));
+        time: user.time,
+        bloodGroup: user.bloodGroup));
   }
 
   void phoneAuthentication(String phoneNo) {

@@ -28,10 +28,11 @@ class BloodRepository extends GetxController {
     });
   }
 
-  Future<List<BloodModel>> allBloodDetails() async {
+  Future<List<BloodModel>> allBloodDetails(String email) async {
     final snapshot = await _db
         .collection("Blood_requests")
         .where("Status", isEqualTo: "No")
+        // .where("Email", isNotEqualTo: email)
         .orderBy('DateTime', descending: true)
         .get();
     final bloodData =
@@ -39,10 +40,12 @@ class BloodRepository extends GetxController {
     return bloodData;
   }
 
-  Future<List<BloodModel>> bloodDetailsCollege(String college) async {
+  Future<List<BloodModel>> bloodDetailsCollege(
+      String college, String email) async {
     final snapshot = await _db
         .collection("Blood_requests")
         .where("College", isEqualTo: college)
+        // .where("Email", isNotEqualTo: email)
         .where("Status", isEqualTo: "No")
         .orderBy('DateTime', descending: true)
         .get();
@@ -51,10 +54,26 @@ class BloodRepository extends GetxController {
     return bloodData;
   }
 
-  Future<List<BloodModel>> bloodDetailsPincode(String pincode) async {
+  Future<List<BloodModel>> bloodDetailsBloodGroup(
+      String bloodGroup, String email) async {
+    final snapshot = await _db
+        .collection("Blood_requests")
+        .where("BloodRequired", isEqualTo: bloodGroup)
+        // .where("Email", isNotEqualTo: email)
+        .where("Status", isEqualTo: "No")
+        .orderBy('DateTime', descending: true)
+        .get();
+    final bloodData =
+        snapshot.docs.map((e) => BloodModel.fromSnapshot(e)).toList();
+    return bloodData;
+  }
+
+  Future<List<BloodModel>> bloodDetailsPincode(
+      String pincode, String email) async {
     final snapshot = await _db
         .collection("Blood_requests")
         .where("PinCode", isEqualTo: pincode)
+        // .where("Email", isNotEqualTo: email)
         .where("Status", isEqualTo: "No")
         .orderBy('DateTime', descending: true)
         .get();
