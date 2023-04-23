@@ -125,7 +125,7 @@ class Dashboard extends StatelessWidget {
                                     Color.fromARGB(255, 7, 78, 136),
                                 endIconColor: Colors.grey,
                                 endCircleColor: Colors.grey,
-                                icon: LineAwesomeIcons.alternate_file,
+                                icon: Icons.school_outlined,
                                 onPress: () =>
                                     Get.to(() => AllRequestCollege()),
                               ),
@@ -141,7 +141,7 @@ class Dashboard extends StatelessWidget {
                                     Color.fromARGB(255, 7, 78, 136),
                                 endIconColor: Colors.grey,
                                 endCircleColor: Colors.grey,
-                                icon: LineAwesomeIcons.alternate_file,
+                                icon: Icons.map_outlined,
                                 onPress: () =>
                                     Get.to(() => AllRequestPincode()),
                               ),
@@ -157,7 +157,7 @@ class Dashboard extends StatelessWidget {
                                     Color.fromARGB(255, 7, 78, 136),
                                 endIconColor: Colors.grey,
                                 endCircleColor: Colors.grey,
-                                icon: LineAwesomeIcons.alternate_file,
+                                icon: Icons.bloodtype_outlined,
                                 onPress: () =>
                                     Get.to(() => AllRequestBloodGroup()),
                               ),
@@ -179,7 +179,7 @@ class Dashboard extends StatelessWidget {
                                     Color.fromARGB(255, 7, 78, 136),
                                 endIconColor: Colors.grey,
                                 endCircleColor: Colors.grey,
-                                icon: LineAwesomeIcons.alternate_file,
+                                icon: Icons.chat_bubble_outline_outlined,
                                 onPress: () => Get.to(() => DonorChat()),
                               ),
                               SizedBox(
@@ -194,7 +194,7 @@ class Dashboard extends StatelessWidget {
                                     Color.fromARGB(255, 7, 78, 136),
                                 endIconColor: Colors.grey,
                                 endCircleColor: Colors.grey,
-                                icon: LineAwesomeIcons.alternate_file,
+                                icon: Icons.chat_bubble_outline_rounded,
                                 onPress: () => Get.to(() => ReceiverChat()),
                               ),
                               SizedBox(

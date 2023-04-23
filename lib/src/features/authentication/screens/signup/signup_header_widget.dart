@@ -22,7 +22,7 @@ class SignupHeaderWidget extends StatelessWidget {
           tSignUpTitle,
           style: Theme.of(context).textTheme.headlineLarge,
         ),
-        Text(tSignUpSubTitle, style: Theme.of(context).textTheme.bodyMedium),
+        Text(tSignUpSubTitle, style: Theme.of(context).textTheme.bodyLarge),
       ],
     );
   }

@@ -17,17 +17,19 @@ const String tWrong = "Incorrect Number? Click here to change.";
 // -- Welcome Screen Text
 const String tAppName = "Dhamni";
 const String tWelcomeTitle = "Dhamni";
-const String tWelcomeSubTitle = "Connecting Blood";
+const String tWelcomeSubTitle = "वसुधैव कुटुम्बकम्";
 
 // -- Login Screen Text
-const String tLoginTitle = "Welcome Back,";
-const String tLoginSubTitle = "Make it work, make it right, make it fast.";
+const String tLoginTitle = "Welcome Back";
+// const String tLoginSubTitle = "Make it work, make it right, make it fast.";
+const String tLoginSubTitle = "वसुधैव कुटुम्बकम्";
 // const String tRememberMe = "Remember Me?";
 const String tDontHaveAnAccount = "Don't have an Account? ";
 
 // -- Sign Up Screen Text
 const String tSignUpTitle = "Get On Board!";
-const String tSignUpSubTitle = "Create your profile to start your Journey.";
+// const String tSignUpSubTitle = "Create your profile to start your Journey.";
+const String tSignUpSubTitle = "वसुधैव कुटुम्बकम्";
 const String tAlreadyHaveAnAccount = "Already have an Account? ";
 
 // -- Forget Password Text

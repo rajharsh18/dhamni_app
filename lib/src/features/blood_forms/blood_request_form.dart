@@ -103,7 +103,7 @@ class Blood_request extends StatelessWidget {
                             isExpanded: true,
                             decoration: const InputDecoration(
                                 label: Text(tBloodGroup),
-                                prefixIcon: Icon(Icons.home_rounded)),
+                                prefixIcon: Icon(Icons.bloodtype_outlined)),
                             style: TextStyle(fontSize: 20, color: Colors.black),
                             items: _blood
                                 .map((e) => DropdownMenuItem(
@@ -125,7 +125,7 @@ class Blood_request extends StatelessWidget {
                             controller: controller.noUnit,
                             keyboardType: TextInputType.number,
                             decoration: InputDecoration(
-                              prefixIcon: Icon(Icons.numbers),
+                              prefixIcon: Icon(Icons.numbers_outlined),
                               labelText: tReqUnit,
                               hintText: tReqUnit,
                               // border: OutlineInputBorder(),
@@ -143,7 +143,7 @@ class Blood_request extends StatelessWidget {
                             keyboardType: TextInputType.phone,
                             inputFormatters: [_phoneFormatter],
                             decoration: InputDecoration(
-                              prefixIcon: Icon(Icons.numbers),
+                              prefixIcon: Icon(Icons.phone_rounded),
                               labelText: tPhoneNo,
                               hintText: tPhoneNo,
                               // border: OutlineInputBorder(),
@@ -160,7 +160,7 @@ class Blood_request extends StatelessWidget {
                             controller: controller.pinCode,
                             keyboardType: TextInputType.number,
                             decoration: InputDecoration(
-                              prefixIcon: Icon(Icons.numbers_outlined),
+                              prefixIcon: Icon(Icons.map_outlined),
                               labelText: tPinCode,
                               hintText: tPinCode,
                               // border: OutlineInputBorder(),

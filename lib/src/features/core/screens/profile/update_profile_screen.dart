@@ -241,7 +241,7 @@ class UpdateProfileScreen extends StatelessWidget {
                             decoration: const InputDecoration(
                               labelText: tPhoneNo,
                               hintText: tPhoneNo,
-                              prefixIcon: Icon(Icons.numbers),
+                              prefixIcon: Icon(Icons.phone),
                             ),
                             style: TextStyle(fontSize: 20),
                           ),
@@ -258,7 +258,7 @@ class UpdateProfileScreen extends StatelessWidget {
                             isExpanded: true,
                             decoration: const InputDecoration(
                                 label: Text(tBloodGroup),
-                                prefixIcon: Icon(Icons.home_rounded)),
+                                prefixIcon: Icon(Icons.bloodtype_outlined)),
                             style: TextStyle(fontSize: 20, color: Colors.black),
                             items: _blood
                                 .map((e) => DropdownMenuItem(
@@ -283,7 +283,7 @@ class UpdateProfileScreen extends StatelessWidget {
                             isExpanded: true,
                             decoration: const InputDecoration(
                                 label: Text(tCollegeName),
-                                prefixIcon: Icon(Icons.home_rounded)),
+                                prefixIcon: Icon(Icons.school_outlined)),
                             style: TextStyle(fontSize: 20, color: Colors.black),
                             items: _college
                                 .map((e) => DropdownMenuItem(
@@ -308,7 +308,7 @@ class UpdateProfileScreen extends StatelessWidget {
                             maxLines: null,
                             decoration: const InputDecoration(
                                 label: Text(tPinCode),
-                                prefixIcon: Icon(Icons.numbers_outlined)),
+                                prefixIcon: Icon(Icons.map_outlined)),
                             style: TextStyle(fontSize: 20),
                           ),
                           const SizedBox(height: tFormHeight - 20),

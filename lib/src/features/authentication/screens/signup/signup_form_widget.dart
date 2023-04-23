@@ -95,7 +95,7 @@ class SignUpForm extends StatelessWidget {
                         keyboardType: TextInputType.phone,
                         inputFormatters: [_phoneFormatter],
                         decoration: InputDecoration(
-                          prefixIcon: Icon(Icons.numbers),
+                          prefixIcon: Icon(Icons.phone_rounded),
                           labelText: tPhoneNo,
                           hintText: tPhoneNo,
                           // border: OutlineInputBorder(),
